@@ -25,3 +25,124 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@keyframes glow {
+  from {
+    width: 0px;
+    height: 0px;
+  }
+  to {
+    width: 250px;
+    height: 80px;
+  }
+}
+
+@layer components {
+  .heading-font {
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 98.634%; /* 78.907px */
+    letter-spacing: -2.4px;
+    @media screen and (min-width: 321px) {
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 98.634%; /* 78.907px */
+      letter-spacing: -2.4px;
+    }
+
+    @media screen and (min-width: 640px) {
+      font-size: 80px;
+      font-weight: 600;
+      line-height: 98.634%; /* 78.907px */
+      letter-spacing: -2.4px;
+    }
+  }
+
+  .heading {
+    @apply heading-font;
+    background: linear-gradient(
+      180deg,
+      #fff 0%,
+      rgba(255, 255, 255, 0.15) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glow-circle {
+    z-index: -1;
+    border-radius: 50%;
+    background: radial-gradient(
+      50.36% 50.35% at 50.17% 49.65%,
+      #fc6767 0%,
+      rgba(239, 49, 106, 0) 100%
+    );
+    filter: blur(50px);
+    animation: glow 1000ms linear forwards 100ms;
+  }
+  .red-text-gradient {
+    background: linear-gradient(
+      199deg,
+      #fe4646 54.44%,
+      rgba(255, 105, 105, 0) 96.48%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .shine-on-cursor {
+    position: absolute;
+    &:before {
+      --y: calc((var(--cursor-y) * 1px));
+      --x: calc((var(--cursor-x) * 1px));
+      display: none;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0.5;
+      z-index: 0;
+      top: 0px;
+      left: 0px;
+      border-radius: 13px;
+      background: radial-gradient(
+        160px circle at var(--x) var(--y),
+        #3c3c3c 0%,
+        rgba(16, 16, 16, 0) 100%
+      );
+    }
+
+    &:hover {
+      &:before {
+        display: block;
+      }
+    }
+  }
+  .swiper-container {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+    /* CSS Grid/Flexbox bug size workaround */
+    /* @see https://github.com/kenwheeler/slick/issues/982 */
+    /* @see https://github.com/nolimits4web/swiper/issues/3599 */
+    min-height: 0;
+    min-width: 0;
+  }
+  .features-mobile-swiper {
+    .swiper-navigation {
+      width: 100%;
+      display: flex;
+      gap: 0.8125rem;
+      padding-top: 1.25rem;
+      > button {
+        height: 40px;
+        background: #fff;
+        flex: 1;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
