@@ -51,20 +51,16 @@ body {
     }
 
     @media screen and (min-width: 640px) {
-      font-size: 80px;
-      font-weight: 600;
-      line-height: 98.634%; /* 78.907px */
-      letter-spacing: -2.4px;
+      font-size: 76px;
+      font-weight: 700;
+      line-height: 74px;
+      letter-spacing: -0.04em;
     }
   }
 
   .heading {
     @apply heading-font;
-    background: linear-gradient(
-      180deg,
-      #fff 0%,
-      rgba(255, 255, 255, 0.15) 100%
-    );
+    background: linear-gradient( 160deg, #fff 0%, rgba(255, 255, 255, 0.75) 100% );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -73,12 +69,19 @@ body {
     z-index: -1;
     border-radius: 50%;
     background: radial-gradient(
-      50.36% 50.35% at 50.17% 49.65%,
+      60px at center,
       #fc6767 0%,
-      rgba(239, 49, 106, 0) 100%
+      rgba(239, 49, 106, 0.1) 100%
     );
-    filter: blur(50px);
+    filter: blur(60px);
     animation: glow 1000ms linear forwards 100ms;
+    @media screen and (min-width: 640px) {
+      background: radial-gradient(
+      500px at center,
+      #fc6767 0%,
+      rgba(239, 49, 106, 0.1) 100%
+    );
+    }
   }
   .red-text-gradient {
     background: linear-gradient(
@@ -143,6 +146,12 @@ body {
         align-items: center;
         justify-content: center;
       }
+    }
+  }
+  .fix-lottie-container {
+      height: 100%;
+      .animation {
+      height: 100%;
     }
   }
 }
