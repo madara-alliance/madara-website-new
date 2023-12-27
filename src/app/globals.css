@@ -60,7 +60,11 @@ body {
 
   .heading {
     @apply heading-font;
-    background: linear-gradient( 160deg, #fff 0%, rgba(255, 255, 255, 0.75) 100% );
+    background: linear-gradient(
+      160deg,
+      #fff 0%,
+      rgba(255, 255, 255, 0.75) 100%
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -77,18 +81,14 @@ body {
     animation: glow 1000ms linear forwards 100ms;
     @media screen and (min-width: 640px) {
       background: radial-gradient(
-      500px at center,
-      #fc6767 0%,
-      rgba(239, 49, 106, 0.1) 100%
-    );
+        500px at center,
+        #fc6767 0%,
+        rgba(239, 49, 106, 0.1) 100%
+      );
     }
   }
   .red-text-gradient {
-    background: linear-gradient(
-      199deg,
-      #fe4646 54.44%,
-      rgba(255, 105, 105, 0) 96.48%
-    );
+    background: linear-gradient(199deg, #fe4646 54.44%, #841e1e 96.48%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -109,8 +109,8 @@ body {
       left: 0px;
       border-radius: 13px;
       background: radial-gradient(
-        160px circle at var(--x) var(--y),
-        #3c3c3c 0%,
+        60px circle at var(--x) var(--y),
+        #fff 0%,
         rgba(16, 16, 16, 0) 100%
       );
     }
@@ -130,6 +130,10 @@ body {
     /* @see https://github.com/nolimits4web/swiper/issues/3599 */
     min-height: 0;
     min-width: 0;
+    .swiper {
+      padding: 10px 20px;
+    }
+    
   }
   .features-mobile-swiper {
     .swiper-navigation {
@@ -149,9 +153,22 @@ body {
     }
   }
   .fix-lottie-container {
-      height: 100%;
-      .animation {
+    height: 100%;
+    .animation {
       height: 100%;
     }
+  }
+  @keyframes increaseWidth {
+    from {
+      width: 0%;
+      opacity: 0;
+    } 
+    to{
+      width: 100%;
+      opacity: 1;
+    }
+  }
+  .navbar-reveal-animate {
+    animation: increaseWidth 1s linear forwards 1s;
   }
 }

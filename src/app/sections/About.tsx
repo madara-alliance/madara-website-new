@@ -31,7 +31,7 @@ const cards = [
     heading: "Earn for every contribution",
     description:
       "You can find multiple issues to pick up on our GitHub. The best part - you get paid via OnlyDust for every contribution you make",
-    lottie: "./combined_cards.lottie",
+    lottie: "./tile4.lottie",
   },
   {
     heading: "Fastest growing ecosystem",
@@ -45,13 +45,23 @@ const cards = [
       "Focus on your getting your thoughts out and crafting the best message while Madara.",
     lottie: "./create_at_speed.lottie",
   },
-
 ];
 
-const Card = ({ item, shouldAutoPlay }: { item: { heading: string; description: string; lottie: string, loop?: boolean }, shouldAutoPlay?: boolean }) => {
+const Card = ({
+  item,
+  shouldAutoPlay,
+}: {
+  item: {
+    heading: string;
+    description: string;
+    lottie: string;
+    loop?: boolean;
+  };
+  shouldAutoPlay?: boolean;
+}) => {
   const lottieRef = React.useRef<DotLottieCommonPlayer>(null);
   return (
-    <div className="flex h-[500px] flex-col rounded-[24px] bg-[#101010] text-left items-center p-8">
+    <div className="flex h-[500px] flex-col rounded-[24px] bg-[#101010] text-left items-start p-8">
       <div className="h-[200px] pb-7">
         <DotLottiePlayer
           className="fix-lottie-container"
@@ -62,7 +72,7 @@ const Card = ({ item, shouldAutoPlay }: { item: { heading: string; description: 
           hover={shouldAutoPlay ? false : true}
         ></DotLottiePlayer>
       </div>
-      <h4 className="text-3xl font-medium text-white pb-4">{item.heading}</h4>
+      <h4 className="text-2xl font-semibold text-white pb-4 text-left max-w-[70%]">{item.heading}</h4>
       <p className="text-base font-medium text-[#ADADAD]">{item.description}</p>
     </div>
   );
@@ -73,24 +83,13 @@ const About = () => {
 
   return (
     <section className="py-10" ref={ref}>
-      {width >= 768 ? (
-        <div className="grid grid-rows-2 grid-cols-3 gap-x-8 gap-y-12">
+      <div className="grid gap-y-4 md:grid-rows-2 md:grid-cols-3 md:gap-x-8 md:gap-y-12">
         {cards.map((item, idx) => (
-            <React.Fragment key={idx}>
-              <Card item={item} />
-            </React.Fragment>
-          ))}
+          <React.Fragment key={idx}>
+            <Card item={item} shouldAutoPlay={width < 768} />
+          </React.Fragment>
+        ))}
       </div>
-      ): (
-        <MobileCarousel>
-          {cards.map((item, idx) => (
-            <SwiperSlide key={idx}>
-              <Card item={item} shouldAutoPlay />
-            </SwiperSlide>
-          ))}
-        </MobileCarousel>
-      )}
-      
     </section>
   );
 };

@@ -14,7 +14,7 @@ import { DotLottiePlayer } from "@dotlottie/react-player";
 
 const Card = ({ lottie }: { lottie: string }) => {
   return (
-    <div className="h-[500px] w-full bg-[#101010] p-4 flex items-center justify-center lg:rounded-[48px] rounded-[18px]">
+    <div className="h-[500px] w-full bg-[#101010] flex items-center justify-center lg:rounded-[48px] rounded-[18px]">
       <DotLottiePlayer
         className="fix-lottie-container"
         src={lottie}
@@ -34,7 +34,8 @@ const CardContainer = ({
 }) => {
   return (
     <div
-      className={`card h-full w-full flex items-center absolute top-0 left-0 z-[${idx}] opacity-0 pr-16`}
+      className={`card h-full w-full flex items-center absolute top-0 left-0 z-[${idx}] opacity-0 pr-16 origin-bottom-center`}
+      style={{ perspective: "2000px" }}
     >
       {children}
     </div>
@@ -103,7 +104,6 @@ const GlobeCard = () => {
         onRender: (state) => {
           // Called on every animation frame.
           // `state` will be an empty object, return updated params.
-          console.log(state);
 
           state.markers = markers;
           state.phi = phi;
@@ -131,7 +131,7 @@ const GlobeCard = () => {
         style={{
           width: "100%",
           height: "100%",
-          maxWidth: '450px',
+          maxWidth: "450px",
           aspectRatio: 1,
         }}
       />
@@ -181,8 +181,6 @@ const FeaturesDesktop = () => {
       //     },
       //   });
 
-      console.log(cards);
-
       gsap.to(".progress", {
         height: "100%",
         ease: "none",
@@ -195,10 +193,10 @@ const FeaturesDesktop = () => {
       const t1 = gsap
         .timeline({
           scrollTrigger: {
-            markers: true,
             trigger: containerRef.current,
-            start: "33% top",
+            start: "30% top",
             end: "34% top",
+            scrub: 0.5,
             toggleActions: "play none reverse none",
           },
         })
@@ -206,13 +204,15 @@ const FeaturesDesktop = () => {
           [leftCards[1], cards[1]],
           {
             opacity: 0,
-            y: "20%",
+            y: "30%",
+            rotateX: "-50deg",
             scale: 0.8,
             ease: Power4.easeIn,
           },
           {
             opacity: 1,
             y: "0%",
+            rotateX: "0deg",
             scale: 1,
             onReverseComplete: () => {
               setCurrentElemet("01");
@@ -222,9 +222,9 @@ const FeaturesDesktop = () => {
               gsap
                 .timeline({
                   scrollTrigger: {
-                    markers: true,
+                    scrub: 0.5,
                     trigger: containerRef.current,
-                    start: "60% top",
+                    start: "50% top",
                     end: "61% top",
                     toggleActions: "play none reverse none",
                   },
@@ -233,13 +233,15 @@ const FeaturesDesktop = () => {
                   [leftCards[2], cards[2]],
                   {
                     opacity: 0,
-                    y: "20%",
+                    y: "30%",
+                    rotateX: "-50deg",
                     scale: 0.8,
                     ease: Power4.easeIn,
                   },
                   {
                     opacity: 1,
                     y: "0%",
+                    rotateX: "0deg",
                     scale: 1,
                     onReverseComplete: () => {
                       setCurrentElemet("02");
@@ -254,12 +256,14 @@ const FeaturesDesktop = () => {
                   {
                     opacity: 1,
                     y: "0%",
+                    rotateX: "0deg",
                     scale: 1,
                     ease: Power4.easeIn,
                   },
                   {
                     opacity: 0,
-                    y: "20%",
+                    y: "30%",
+                    rotateX: "-50deg",
                     scale: 0.8,
                   },
                   "<"
@@ -267,18 +271,31 @@ const FeaturesDesktop = () => {
             },
           }
         )
+
+        gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "24% top",
+            end: "34% top",
+            scrub: 0.5,
+            toggleActions: "play none reverse none",
+          },
+        })
         .fromTo(
           [leftCards[0], cards[0]],
           {
             opacity: 1,
             y: "0%",
+            rotateX: "0deg",
             scale: 1,
             ease: Power4.easeIn,
           },
           {
             opacity: 0,
-            y: "20%",
+            y: "30%",
             scale: 0.8,
+            rotateX: "-50deg",
           },
           "<"
         );
@@ -301,10 +318,10 @@ const FeaturesDesktop = () => {
   }, []);
   return (
     <>
-      <div className="lg:w-2/4 lg:h-[500vh]" id="left-container">
+      <div className="lg:w-2/4 lg:h-[300vh]" id="left-container">
         <div className="flex flex-col justify-center lg:h-screen text-left lg:sticky top-0 left-0">
           {copies.map((copy, idx) => (
-            <div className="left-content absolute opacity-0 lg:pr-12" key={idx}>
+            <div className="left-content absolute opacity-0 lg:pr-12" key={idx} style={{ perspective: '2000px' }}>
               <p className="text-[#FF6969] lg:text-xl text-lg pb-3 font-bold tracking-widest">
                 MADARA
               </p>
@@ -320,7 +337,7 @@ const FeaturesDesktop = () => {
           ))}
         </div>
       </div>
-      <div className="w-2/4 md:h-[500vh] relative" ref={containerRef}>
+      <div className="w-2/4 md:h-[300vh] relative" ref={containerRef}>
         <div
           className="sticky top-0 left-0 flex flex-col items-center h-screen"
           ref={itemsRef}
@@ -348,12 +365,15 @@ const FeaturesMobile = () => {
         {copies.map((e, idx) => (
           <SwiperSlide key={idx}>
             <div>
-              <div className="lg:w-2/4 lg:h-[500vh]" id="left-container">
+              <div className="lg:w-2/4 lg:h-[300vh]" id="left-container">
                 <div className="flex flex-col justify-center lg:h-screen text-left lg:sticky top-0 left-0">
                   <p className="text-[#FF6969] lg:text-xl text-lg pb-3 font-bold tracking-widest">
                     MADARA
                   </p>
-                  <h1 className="pb-10 heading" dangerouslySetInnerHTML={{ __html: e.heading }} />
+                  <h1
+                    className="pb-10 heading"
+                    dangerouslySetInnerHTML={{ __html: e.heading }}
+                  />
                 </div>
               </div>
               {e.cardAsset()}
@@ -368,10 +388,8 @@ const FeaturesMobile = () => {
 const Features = () => {
   const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>();
 
-  console.log(width);
-
   return (
-    <section className="lg:h-[500vh] lg:px-10" id="container" ref={ref}>
+    <section className="lg:h-[300vh] lg:px-10" id="container" ref={ref}>
       <div className="flex flex-col lg:flex-row  lg:justify-between h-screen relative">
         {width >= 768 ? <FeaturesDesktop /> : <FeaturesMobile />}
       </div>

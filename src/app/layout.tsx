@@ -5,7 +5,7 @@ import "./globals.css";
 // Font files can be colocated inside of `app`
 const Geist = localFont({
   src: [ { path: "../assets/fonts/Geist-Medium.woff2", weight: "500" }, { path: "../assets/fonts/Geist-SemiBold.woff2", weight: "600" }, { path: "../assets/fonts/Geist-Bold.woff2", weight: "700" }, { path: "../assets/fonts/Geist-Regular.woff2", weight: "400" }],
-  display: "swap",
+  display: "block",
 });
 
 export const metadata: Metadata = {
