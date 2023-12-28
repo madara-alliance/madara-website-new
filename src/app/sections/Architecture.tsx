@@ -183,17 +183,25 @@ const Architecture = () => {
 
   React.useEffect(() => {
     if (isInView) {
-      const animation = animate(sequence, { repeat: Infinity });
-      animationRef.current = animation;
+      animate(".architecture-content", {
+        opacity: [0, 1],
+        y: ["10%", "0%"],
+      },
+      {
+        duration: 0.5,
+      }).then(() => {
+        const animation = animate(sequence, { repeat: Infinity });
+        animationRef.current = animation;
+      })
     } else {
       if (animationRef.current) animationRef.current.cancel();
     }
   }, [isInView]);
 
   return (
-    <div className="pb-32">
-      <h1 className="heading pb-14 text-center">Madara Architecture</h1>
-      <div ref={scope}>
+    <section className="pb-32" id="architecture" ref={scope}>
+      <h1 className="heading pb-14 text-center architecture-content opacity-0">Madara Architecture</h1>
+      <div className="architecture-content opacity-0">
         <svg
           width="100%"
           viewBox="0 0 2061 879"
@@ -1315,7 +1323,7 @@ const Architecture = () => {
           </defs>
         </svg>
       </div>
-    </div>
+    </section>
   );
 };
 

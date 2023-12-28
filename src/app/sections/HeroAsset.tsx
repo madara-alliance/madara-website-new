@@ -20,7 +20,7 @@ const HeroAsset = () => {
       <motion.svg
         initial="hidden"
         height="100%"
-        width="90%"
+        width="75%"
         viewBox="0 0 1705 961"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -11,10 +11,12 @@ import MobileCarousel from "../components/MobileCarousel";
 import createGlobe from "cobe";
 import { useOnScreen } from "../IntersectionObserver.hook";
 import { DotLottiePlayer } from "@dotlottie/react-player";
+import {useInView, useAnimate} from "framer-motion";
+import {stagger} from "framer-motion/dom";
 
 const Card = ({ lottie }: { lottie: string }) => {
   return (
-    <div className="h-[500px] w-full bg-[#101010] flex items-center justify-center lg:rounded-[48px] rounded-[18px]">
+    <div className="h-[400px] lg:h-[500px] w-full bg-[#101010] flex items-center justify-center lg:rounded-[48px] rounded-[18px]">
       <DotLottiePlayer
         className="fix-lottie-container"
         src={lottie}
@@ -88,8 +90,8 @@ const GlobeCard = () => {
     if (canvasRef?.current && isIntersecting) {
       const globe = createGlobe(canvasRef?.current, {
         devicePixelRatio: 2,
-        height: 900,
-        width: 900,
+        height: typeof window !== "undefined" && window?.document.documentElement.clientWidth > 1024 ? 900 : 500,
+        width: typeof window !== "undefined" && window?.document.documentElement.clientWidth > 1024 ? 900 : window?.document.documentElement.clientWidth + 150,
         phi: 2 * Math.PI,
         theta: 0,
         dark: 1,
@@ -124,13 +126,13 @@ const GlobeCard = () => {
   return (
     <div
       ref={containerRef}
-      className="h-[500px] w-full bg-[#101010] p-4 flex items-center justify-center lg:rounded-[48px] rounded-[18px]"
+      className="h-[400px] lg:h-[500px] w-full bg-[#101010] p-4 flex items-center justify-center lg:rounded-[48px] rounded-[18px]"
     >
       <canvas
         ref={canvasRef}
         style={{
           width: "100%",
-          height: "100%",
+          height: typeof window !== "undefined" && window?.document.documentElement.clientWidth >= 1024 ? "100%" : "250px",
           maxWidth: "450px",
           aspectRatio: 1,
         }}
@@ -270,9 +272,9 @@ const FeaturesDesktop = () => {
                 );
             },
           }
-        )
+        );
 
-        gsap
+      gsap
         .timeline({
           scrollTrigger: {
             trigger: containerRef.current,
@@ -321,7 +323,11 @@ const FeaturesDesktop = () => {
       <div className="lg:w-2/4 lg:h-[300vh]" id="left-container">
         <div className="flex flex-col justify-center lg:h-screen text-left lg:sticky top-0 left-0">
           {copies.map((copy, idx) => (
-            <div className="left-content absolute opacity-0 lg:pr-12" key={idx} style={{ perspective: '2000px' }}>
+            <div
+              className="left-content absolute opacity-0 lg:pr-12"
+              key={idx}
+              style={{ perspective: "2000px" }}
+            >
               <p className="text-[#FF6969] lg:text-xl text-lg pb-3 font-bold tracking-widest">
                 MADARA
               </p>
@@ -330,7 +336,7 @@ const FeaturesDesktop = () => {
                 dangerouslySetInnerHTML={{ __html: copy.heading }}
               />
               <h2
-                className="text-texting-secondary pb-10 text-2xl"
+                className="text-texting-secondary pb-10 text-lg"
                 dangerouslySetInnerHTML={{ __html: copy.description }}
               />
             </div>
@@ -359,38 +365,53 @@ const FeaturesDesktop = () => {
 };
 
 const FeaturesMobile = () => {
+  const [currentActive, setCurrentActive] = React.useState(0);
+  const handleSlideChange = () => {
+
+  }
   return (
     <>
-      <MobileCarousel>
-        {copies.map((e, idx) => (
-          <SwiperSlide key={idx}>
-            <div>
-              <div className="lg:w-2/4 lg:h-[300vh]" id="left-container">
-                <div className="flex flex-col justify-center lg:h-screen text-left lg:sticky top-0 left-0">
-                  <p className="text-[#FF6969] lg:text-xl text-lg pb-3 font-bold tracking-widest">
-                    MADARA
-                  </p>
-                  <h1
-                    className="pb-10 heading"
-                    dangerouslySetInnerHTML={{ __html: e.heading }}
-                  />
-                </div>
-              </div>
-              {e.cardAsset()}
-            </div>
-          </SwiperSlide>
-        ))}
-      </MobileCarousel>
+      <div className="pt-10" id="left-container">
+        <div className="flex flex-col justify-center lg:h-screen text-left lg:sticky top-0 left-0">
+          <h1
+            className="pb-10 heading"
+            dangerouslySetInnerHTML={{ __html: copies[currentActive].heading }}
+          />
+        </div>
+      </div>
+      <div className="ml-[-1.5rem] mr-[-1.5rem]">
+        <MobileCarousel handleSlideChange={handleSlideChange}>
+          {copies.map((e, idx) => (
+            <SwiperSlide key={idx}>
+              <div className="pl-[20px]">{e.cardAsset()}</div>
+            </SwiperSlide>
+          ))}
+        </MobileCarousel>
+      </div>
     </>
   );
 };
 
 const Features = () => {
   const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>();
+  const [scope, animate] = useAnimate()
+  const isInView = useInView(scope, { amount: 0.2, once: true })
 
+  React.useEffect(() => {
+    if(isInView) {
+      animate(scope.current, {
+        opacity: [0, 1],
+        y: ['10%', '0%']
+      }, {
+        delay: stagger(0.2),
+        duration: 0.5
+      })
+    }
+  }, [isInView]);
+  
   return (
     <section className="lg:h-[300vh] lg:px-10" id="container" ref={ref}>
-      <div className="flex flex-col lg:flex-row  lg:justify-between h-screen relative">
+      <div className="flex flex-col lg:flex-row  lg:justify-between h-screen relative" ref={scope}>
         {width >= 768 ? <FeaturesDesktop /> : <FeaturesMobile />}
       </div>
     </section>

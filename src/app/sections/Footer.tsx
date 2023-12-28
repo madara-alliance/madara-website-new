@@ -56,7 +56,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="text-xl text-white/30 font-normal pt-32">
+      <div className="text-sm lg:text-xl text-white/30 font-normal pt-32 text-center">
         Copyright © 2023-24 Madara copyright name.
       </div>
     </section>

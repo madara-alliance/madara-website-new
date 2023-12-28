@@ -6,20 +6,20 @@ import Link from "next/link";
 
 const navItems = [
   {
-    text: "Home",
-    link: "#home",
+    text: "Architecture",
+    link: "#architecture",
   },
   {
-    text: "Home",
-    link: "#home",
+    text: "Docs",
+    link: "https://docs.madara.zone/",
   },
   {
-    text: "Home",
-    link: "#home",
+    text: "Ecosystem",
+    link: "#testimonials",
   },
   {
-    text: "Home",
-    link: "#home",
+    text: "Socials",
+    link: "#footer",
   },
 ];
 
@@ -51,10 +51,10 @@ const Navbar = () => {
     <div className="flex flex-col items-center fixed z-[100] top-0 w-full">
       <nav
         id="nav"
-        className="w-full z-[100]"
+        className="w-full z-[100] md:grid md:grid-cols-[1fr_2fr_1fr] lg:px-32 md:px-28 sm:px-20 px-6  bg-black/90"
         style={{ backdropFilter: "blur(4px)" }}
       >
-        <div className="lg:px-32 md:px-28 sm:px-20 px-6 py-4  flex justify-between items-center md:grid md:grid-cols-3 bg-black/90">
+        <div className="py-4 flex justify-between items-center">
           <div className="flex items-center">
             <Image src={MadaraLogo} alt="madara logo" />
             <h2 className="font-bold">MADARA</h2>
@@ -86,14 +86,14 @@ const Navbar = () => {
           </button>
         </div>
         
-        <div className={`absolute md:static z-[1] w-full flex flex-col md:flex-row md:items-center md:justify-end md:w-2/4 transition-transform bg-black p-4 ${
+        <div className={`absolute md:static z-[1] w-full flex flex-col md:flex-row md:items-center md:justify-between transition-transform bg-black p-4 ${
           isOpen ? "translate-y-0" : "translate-y-[-200%]"
-        } md:translate-y-0 md:pt-0 md:p-0 md:pr-10`}>
+        } md:translate-y-0 md:p-0 lg:px-10`}>
           {navItems.map((item, idx) => (
             <Link
               key={idx}
               href={item.link}
-              className="text-[#C0C0C0] hover:text-white text-lg active:text-white"
+              className="text-[#C0C0C0] hover:text-white text-md active:text-white"
             >
               {item.text}
             </Link>
@@ -101,7 +101,7 @@ const Navbar = () => {
         </div>
         <div
           id="button-container"
-          className="hidden md:visible items-center justify-end gap-2 transition-all opacity-0"
+          className="hidden md:flex items-center justify-end gap-2 transition-all opacity-0"
         >
           <a className="text-[#FF7074] font-semibold text-lg px-5">Build now</a>
           <button className="bg-[#BF383C] border-[1.5px] border-[#C77475] flex items-center px-5 py-2 rounded-[32px]">
@@ -109,7 +109,7 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-      <div className="h-[1px] bg-[#464646] navbar-reveal-animate "></div>
+      <div className="h-[1px] navbar-stroke navbar-reveal-animate "></div>
     </div>
   );
 };
