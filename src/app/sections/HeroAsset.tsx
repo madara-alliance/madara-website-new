@@ -25,7 +25,7 @@ const HeroAsset = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_448_78)">
+        <g clipPath="url(#clip0_448_78)">
           <g opacity="0.67">
             <circle
               cx="852.5"
@@ -33,7 +33,7 @@ const HeroAsset = () => {
               r="850.485"
               fill="url(#paint0_radial_448_78)"
               stroke="#4C2A2A"
-              stroke-width="4.03073"
+              strokeWidth="4.03073"
             />
             <circle
               cx="852.5"
@@ -41,7 +41,7 @@ const HeroAsset = () => {
               r="785.638"
               fill="url(#paint1_radial_448_78)"
               stroke="#4C2A2A"
-              stroke-width="3.7234"
+              strokeWidth="3.7234"
             />
             <circle
               cx="852.5"
@@ -49,7 +49,7 @@ const HeroAsset = () => {
               r="574.139"
               fill="url(#paint2_radial_448_78)"
               stroke="#4C2A2A"
-              stroke-width="2.72104"
+              strokeWidth="2.72104"
             />
             <circle
               cx="852.5"
@@ -57,7 +57,7 @@ const HeroAsset = () => {
               r="384.589"
               fill="url(#paint3_radial_448_78)"
               stroke="#4C2A2A"
-              stroke-width="1.8227"
+              strokeWidth="1.8227"
             />
             <circle
               cx="852.5"
@@ -78,7 +78,7 @@ const HeroAsset = () => {
             stroke="url(#paint6_radial_448_78)"
           />
         </g>
-        <g clip-path="url(#clip1_448_78)">
+        <g clipPath="url(#clip1_448_78)">
           <path
             d="M175.504 455.755L1529.97 1248.76"
             stroke="url(#paint7_radial_448_78)"
@@ -86,7 +86,7 @@ const HeroAsset = () => {
           <path
             d="M175.504 455.755L1529.97 1248.76"
             stroke="url(#paint8_linear_448_78)"
-            stroke-width="5.30026"
+            strokeWidth="5.30026"
           />
           <path
             d="M67.5039 847.755L1637.01 857.286"
@@ -99,7 +99,7 @@ const HeroAsset = () => {
           <path
             d="M170.504 1240.75L1534.5 464.255"
             stroke="url(#paint11_linear_448_78)"
-            stroke-width="5.30026"
+            strokeWidth="5.30026"
           />
           <path
             d="M455.504 1529.75L1248.51 175.286"
@@ -108,7 +108,7 @@ const HeroAsset = () => {
           <path
             d="M455.504 1529.75L1153 343"
             stroke="url(#paint13_linear_448_78)"
-            stroke-width="5.30026"
+            strokeWidth="5.30026"
           />
           <path
             d="M847.504 1637.75L857.035 68.2462"
@@ -117,27 +117,27 @@ const HeroAsset = () => {
           <path
             d="M847.504 1637.75L857.035 68.2462"
             stroke="url(#paint15_linear_448_78)"
-            stroke-width="5.30026"
+            strokeWidth="5.30026"
           />
           <path
             d="M856.5 156L854.5 468C830.667 468 772.5 472.2 730.5 489"
             stroke="#753333"
-            stroke-width="2"
+            strokeWidth="2"
           />
           <path
             d="M856 156V279C907.833 277.667 1003.5 286.5 1089.5 330.5"
             stroke="#753333"
-            stroke-width="2"
+            strokeWidth="2"
           />
           <path
             d="M856 156V279C907.833 277.667 1003.5 286.5 1089.5 330.5"
             stroke="url(#paint16_linear_448_78)"
-            stroke-width="5"
+            strokeWidth="5"
           />
           <path
             d="M856.5 156L854.5 468C830.667 468 772.5 472.2 730.5 489"
             stroke="url(#paint17_linear_448_78)"
-            stroke-width="5"
+            strokeWidth="5"
           />
           <path
             d="M406.504 78.7549L1183 1442.75"
@@ -146,7 +146,7 @@ const HeroAsset = () => {
           <path
             d="M674 549L1183 1443"
             stroke="url(#paint19_linear_448_78)"
-            stroke-width="5.30026"
+            strokeWidth="5.30026"
           />
         </g>
         <circle cx="852.5" cy="857.5" r="103" fill="#421B1B" stroke="#5D4D4D" />
@@ -234,7 +234,7 @@ const HeroAsset = () => {
           cy="521.818"
           r="68.1927"
           stroke="url(#paint20_linear_448_78)"
-          stroke-width="1.25124"
+          strokeWidth="1.25124"
         />
         <circle
           cx="668.107"
@@ -242,7 +242,7 @@ const HeroAsset = () => {
           r="32.0531"
           fill="url(#paint21_radial_448_78)"
           stroke="url(#paint22_linear_448_78)"
-          stroke-width="3.05268"
+          strokeWidth="3.05268"
         />
         <g filter="url(#filter1_i_448_78)">
           <circle cx="194.818" cy="452.818" r="68.8184" fill="#351616" />
@@ -252,7 +252,7 @@ const HeroAsset = () => {
           cy="452.818"
           r="68.1927"
           stroke="url(#paint23_linear_448_78)"
-          stroke-width="1.25124"
+          strokeWidth="1.25124"
         />
         <circle
           cx="194.107"
@@ -260,17 +260,17 @@ const HeroAsset = () => {
           r="32.0531"
           fill="url(#paint24_radial_448_78)"
           stroke="url(#paint25_linear_448_78)"
-          stroke-width="3.05268"
+          strokeWidth="3.05268"
         />
         <path
           d="M249.5 500L520 656C528.5 637.167 558.4 590.2 610 553"
           stroke="#753333"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <path
           d="M249.5 500L520 656C528.5 637.167 558.4 590.2 610 553"
           stroke="url(#paint26_linear_448_78)"
-          stroke-width="5"
+          strokeWidth="5"
         />
         <g filter="url(#filter2_i_448_78)">
           <circle cx="855.818" cy="86.8184" r="68.8184" fill="#351616" />
@@ -280,7 +280,7 @@ const HeroAsset = () => {
           cy="86.8184"
           r="68.1927"
           stroke="url(#paint27_linear_448_78)"
-          stroke-width="1.25124"
+          strokeWidth="1.25124"
         />
         <circle
           cx="855.107"
@@ -288,7 +288,7 @@ const HeroAsset = () => {
           r="32.0531"
           fill="url(#paint28_radial_448_78)"
           stroke="url(#paint29_linear_448_78)"
-          stroke-width="3.05268"
+          strokeWidth="3.05268"
         />
         <g filter="url(#filter3_i_448_78)">
           <circle cx="1529.89" cy="463.887" r="79.8867" fill="#351616" />
@@ -298,7 +298,7 @@ const HeroAsset = () => {
           cy="463.887"
           r="79.1605"
           stroke="url(#paint30_linear_448_78)"
-          stroke-width="1.45249"
+          strokeWidth="1.45249"
         />
         <circle
           cx="1529.06"
@@ -306,17 +306,17 @@ const HeroAsset = () => {
           r="37.4539"
           fill="url(#paint31_radial_448_78)"
           stroke="url(#paint32_linear_448_78)"
-          stroke-width="3.05268"
+          strokeWidth="3.05268"
         />
         <path
           d="M1463 506.5L1351 568.5C1335.33 537.333 1284.5 460 1206.5 400"
           stroke="#753333"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <path
           d="M1463 506.5L1351 568.5C1335.33 537.333 1284.5 460 1206.5 400"
           stroke="url(#paint33_linear_448_78)"
-          stroke-width="5"
+          strokeWidth="5"
         />
         <g filter="url(#filter4_i_448_78)">
           <circle cx="1150" cy="358" r="70" fill="#351616" />
@@ -326,7 +326,7 @@ const HeroAsset = () => {
           cy="358"
           r="69.3636"
           stroke="url(#paint34_linear_448_78)"
-          stroke-width="1.27273"
+          strokeWidth="1.27273"
         />
         <circle
           cx="1149.27"
@@ -334,7 +334,7 @@ const HeroAsset = () => {
           r="32.6297"
           fill="url(#paint35_radial_448_78)"
           stroke="url(#paint36_linear_448_78)"
-          stroke-width="3.05268"
+          strokeWidth="3.05268"
         />
         <defs>
           <filter
@@ -344,9 +344,9 @@ const HeroAsset = () => {
             width="137.637"
             height="142.642"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -379,9 +379,9 @@ const HeroAsset = () => {
             width="137.637"
             height="142.642"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -414,9 +414,9 @@ const HeroAsset = () => {
             width="137.637"
             height="142.642"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -449,9 +449,9 @@ const HeroAsset = () => {
             width="159.773"
             height="165.583"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -484,9 +484,9 @@ const HeroAsset = () => {
             width="140"
             height="145.091"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -520,8 +520,8 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(852.5 852.5) rotate(90) scale(852.5)"
           >
-            <stop stopColor="#4C1D1D" stop-opacity="0" />
-            <stop offset="1" stopColor="#4A2020" stop-opacity="0.48" />
+            <stop stopColor="#4C1D1D" stopOpacity="0" />
+            <stop offset="1" stopColor="#4A2020" stopOpacity="0.48" />
           </radialGradient>
           <radialGradient
             id="paint1_radial_448_78"
@@ -531,8 +531,8 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(852.5 852.5) rotate(90) scale(787.5)"
           >
-            <stop stopColor="#4C1D1D" stop-opacity="0" />
-            <stop offset="1" stopColor="#4A2020" stop-opacity="0.48" />
+            <stop stopColor="#4C1D1D" stopOpacity="0" />
+            <stop offset="1" stopColor="#4A2020" stopOpacity="0.48" />
           </radialGradient>
           <radialGradient
             id="paint2_radial_448_78"
@@ -542,8 +542,8 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(852.5 852.5) rotate(90) scale(575.5)"
           >
-            <stop stopColor="#4C1D1D" stop-opacity="0" />
-            <stop offset="1" stopColor="#4A2020" stop-opacity="0.48" />
+            <stop stopColor="#4C1D1D" stopOpacity="0" />
+            <stop offset="1" stopColor="#4A2020" stopOpacity="0.48" />
           </radialGradient>
           <radialGradient
             id="paint3_radial_448_78"
@@ -553,8 +553,8 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(852.5 852.5) rotate(90) scale(385.5)"
           >
-            <stop stopColor="#4C1D1D" stop-opacity="0" />
-            <stop offset="1" stopColor="#4A2020" stop-opacity="0.48" />
+            <stop stopColor="#4C1D1D" stopOpacity="0" />
+            <stop offset="1" stopColor="#4A2020" stopOpacity="0.48" />
           </radialGradient>
           <radialGradient
             id="paint4_radial_448_78"
@@ -564,8 +564,8 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(852.5 852.5) rotate(90) scale(211.5)"
           >
-            <stop stopColor="#4C1D1D" stop-opacity="0" />
-            <stop offset="1" stopColor="#4A2020" stop-opacity="0.48" />
+            <stop stopColor="#4C1D1D" stopOpacity="0" />
+            <stop offset="1" stopColor="#4A2020" stopOpacity="0.48" />
           </radialGradient>
           <radialGradient
             id="paint5_radial_448_78"
@@ -576,7 +576,7 @@ const HeroAsset = () => {
             gradientTransform="translate(871.392 893.964) rotate(-91.0925) scale(929.91)"
           >
             <stop stopColor="#5C2525" />
-            <stop offset="1" stopColor="#040202" stop-opacity="0" />
+            <stop offset="1" stopColor="#040202" stopOpacity="0" />
           </radialGradient>
           <radialGradient
             id="paint6_radial_448_78"
@@ -587,7 +587,7 @@ const HeroAsset = () => {
             gradientTransform="translate(854.878 862.982) rotate(179.647) scale(917.227 522.16)"
           >
             <stop stopColor="#FF8181" />
-            <stop offset="1" stopColor="#8A2828" stop-opacity="0" />
+            <stop offset="1" stopColor="#8A2828" stopOpacity="0" />
           </radialGradient>
           <radialGradient
             id="paint7_radial_448_78"
@@ -598,7 +598,7 @@ const HeroAsset = () => {
             gradientTransform="translate(849.777 862.629) rotate(-150.353) scale(917.227 522.16)"
           >
             <stop stopColor="#FF8181" />
-            <stop offset="1" stopColor="#8A2828" stop-opacity="0" />
+            <stop offset="1" stopColor="#8A2828" stopOpacity="0" />
           </radialGradient>
           <motion.linearGradient
             id="paint8_linear_448_78"
@@ -614,9 +614,9 @@ const HeroAsset = () => {
             }}
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#8A2828" stop-opacity="0" />
+            <stop stopColor="#8A2828" stopOpacity="0" />
             <stop offset="0.37111" stopColor="#FF8181" />
-            <stop offset="1" stopColor="#8A2828" stop-opacity="0" />
+            <stop offset="1" stopColor="#8A2828" stopOpacity="0" />
           </motion.linearGradient>
           <radialGradient
             id="paint9_radial_448_78"
@@ -627,7 +627,7 @@ const HeroAsset = () => {
             gradientTransform="translate(854.878 862.982) rotate(179.647) scale(917.227 522.16)"
           >
             <stop stopColor="#FF8181" />
-            <stop offset="1" stopColor="#8A2828" stop-opacity="0" />
+            <stop offset="1" stopColor="#8A2828" stopOpacity="0" />
           </radialGradient>
           <radialGradient
             id="paint10_radial_448_78"
@@ -638,7 +638,7 @@ const HeroAsset = () => {
             gradientTransform="translate(860.004 860.255) rotate(149.647) scale(917.227 522.16)"
           >
             <stop stopColor="#FF8181" />
-            <stop offset="1" stopColor="#8A2828" stop-opacity="0" />
+            <stop offset="1" stopColor="#8A2828" stopOpacity="0" />
           </radialGradient>
           <motion.linearGradient
             id="paint11_linear_448_78"
@@ -653,9 +653,9 @@ const HeroAsset = () => {
             }}
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#8A2828" stop-opacity="0" />
+            <stop stopColor="#8A2828" stopOpacity="0" />
             <stop offset="0.37111" stopColor="#FF8181" />
-            <stop offset="1" stopColor="#8A2828" stop-opacity="0" />
+            <stop offset="1" stopColor="#8A2828" stopOpacity="0" />
           </motion.linearGradient>
           <radialGradient
             id="paint12_radial_448_78"
@@ -666,7 +666,7 @@ const HeroAsset = () => {
             gradientTransform="translate(862.378 855.482) rotate(119.647) scale(917.227 522.16)"
           >
             <stop stopColor="#FF8181" />
-            <stop offset="1" stopColor="#8A2828" stop-opacity="0" />
+            <stop offset="1" stopColor="#8A2828" stopOpacity="0" />
           </radialGradient>
           <motion.linearGradient
             id="paint13_linear_448_78"
@@ -681,9 +681,9 @@ const HeroAsset = () => {
             }}
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#8A2828" stop-opacity="0" />
+            <stop stopColor="#8A2828" stopOpacity="0" />
             <stop offset="0.220543" stopColor="#FF8181" />
-            <stop offset="0.401239" stopColor="#8A2828" stop-opacity="0" />
+            <stop offset="0.401239" stopColor="#8A2828" stopOpacity="0" />
           </motion.linearGradient>
           <radialGradient
             id="paint14_radial_448_78"
@@ -694,7 +694,7 @@ const HeroAsset = () => {
             gradientTransform="translate(862.731 850.38) rotate(89.6469) scale(917.227 522.16)"
           >
             <stop stopColor="#FF8181" />
-            <stop offset="1" stopColor="#8A2828" stop-opacity="0" />
+            <stop offset="1" stopColor="#8A2828" stopOpacity="0" />
           </radialGradient>
           <motion.linearGradient
             id="paint15_linear_448_78"
@@ -709,9 +709,9 @@ const HeroAsset = () => {
               duration: 2,
             }}
           >
-            <stop stopColor="#8A2828" stop-opacity="0" />
+            <stop stopColor="#8A2828" stopOpacity="0" />
             <stop offset="0.37111" stopColor="#FF8181" />
-            <stop offset="1" stopColor="#8A2828" stop-opacity="0" />
+            <stop offset="1" stopColor="#8A2828" stopOpacity="0" />
           </motion.linearGradient>
           <motion.linearGradient
             id="paint16_linear_448_78"
@@ -730,9 +730,9 @@ const HeroAsset = () => {
             }}
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#793D3D" stop-opacity="0" />
+            <stop stopColor="#793D3D" stopOpacity="0" />
             <stop offset="0.402991" stopColor="#C67575" />
-            <stop offset="1" stopColor="#793D3D" stop-opacity="0" />
+            <stop offset="1" stopColor="#793D3D" stopOpacity="0" />
           </motion.linearGradient>
           <motion.linearGradient
             id="paint17_linear_448_78"
@@ -749,9 +749,9 @@ const HeroAsset = () => {
             }}
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0.0815993" stopColor="#793D3D" stop-opacity="0" />
+            <stop offset="0.0815993" stopColor="#793D3D" stopOpacity="0" />
             <stop offset="0.312003" stopColor="#EA8E8E" />
-            <stop offset="0.582975" stopColor="#793D3D" stop-opacity="0" />
+            <stop offset="0.582975" stopColor="#793D3D" stopOpacity="0" />
           </motion.linearGradient>
           <radialGradient
             id="paint18_radial_448_78"
@@ -762,7 +762,7 @@ const HeroAsset = () => {
             gradientTransform="translate(787.004 768.255) rotate(-120.353) scale(917.227 522.16)"
           >
             <stop stopColor="#FF8181" />
-            <stop offset="1" stopColor="#8A2828" stop-opacity="0" />
+            <stop offset="1" stopColor="#8A2828" stopOpacity="0" />
           </radialGradient>
           <motion.linearGradient
             id="paint19_linear_448_78"
@@ -777,9 +777,9 @@ const HeroAsset = () => {
             }}
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#8A2828" stop-opacity="0" />
+            <stop stopColor="#8A2828" stopOpacity="0" />
             <stop offset="0.37111" stopColor="#FF8181" />
-            <stop offset="1" stopColor="#8A2828" stop-opacity="0" />
+            <stop offset="1" stopColor="#8A2828" stopOpacity="0" />
           </motion.linearGradient>
           <linearGradient
             id="paint20_linear_448_78"
@@ -790,7 +790,7 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
           >
             <stop stopColor="#A6A6A6" />
-            <stop offset="1" stopColor="#545454" stop-opacity="0" />
+            <stop offset="1" stopColor="#545454" stopOpacity="0" />
           </linearGradient>
           <radialGradient
             id="paint21_radial_448_78"
@@ -800,8 +800,8 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(668.107 523.867) rotate(90) scale(33.5795)"
           >
-            <stop offset="0.469173" stopColor="#FF5D5D" stop-opacity="0" />
-            <stop offset="1" stopColor="#FA8484" stop-opacity="0.18" />
+            <stop offset="0.469173" stopColor="#FF5D5D" stopOpacity="0" />
+            <stop offset="1" stopColor="#FA8484" stopOpacity="0.18" />
           </radialGradient>
           <motion.linearGradient
             id="paint22_linear_448_78"
@@ -842,7 +842,7 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
           >
             <stop stopColor="#A6A6A6" />
-            <stop offset="1" stopColor="#545454" stop-opacity="0" />
+            <stop offset="1" stopColor="#545454" stopOpacity="0" />
           </linearGradient>
           <radialGradient
             id="paint24_radial_448_78"
@@ -852,8 +852,8 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(194.107 454.867) rotate(90) scale(33.5795)"
           >
-            <stop offset="0.469173" stopColor="#FF5D5D" stop-opacity="0" />
-            <stop offset="1" stopColor="#FA8484" stop-opacity="0.18" />
+            <stop offset="0.469173" stopColor="#FF5D5D" stopOpacity="0" />
+            <stop offset="1" stopColor="#FA8484" stopOpacity="0.18" />
           </radialGradient>
           <motion.linearGradient
             id="paint25_linear_448_78"
@@ -900,9 +900,9 @@ const HeroAsset = () => {
             }}
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#793D3D" stop-opacity="0" />
+            <stop stopColor="#793D3D" stopOpacity="0" />
             <stop offset="0.450406" stopColor="#DC7B7B" />
-            <stop offset="1" stopColor="#793D3D" stop-opacity="0" />
+            <stop offset="1" stopColor="#793D3D" stopOpacity="0" />
           </motion.linearGradient>
           <linearGradient
             id="paint27_linear_448_78"
@@ -913,7 +913,7 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
           >
             <stop stopColor="#A6A6A6" />
-            <stop offset="1" stopColor="#545454" stop-opacity="0" />
+            <stop offset="1" stopColor="#545454" stopOpacity="0" />
           </linearGradient>
           <radialGradient
             id="paint28_radial_448_78"
@@ -923,8 +923,8 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(855.107 88.8675) rotate(90) scale(33.5795)"
           >
-            <stop offset="0.469173" stopColor="#FF5D5D" stop-opacity="0" />
-            <stop offset="1" stopColor="#FA8484" stop-opacity="0.18" />
+            <stop offset="0.469173" stopColor="#FF5D5D" stopOpacity="0" />
+            <stop offset="1" stopColor="#FA8484" stopOpacity="0.18" />
           </radialGradient>
           <linearGradient
             id="paint29_linear_448_78"
@@ -965,7 +965,7 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
           >
             <stop stopColor="#A6A6A6" />
-            <stop offset="1" stopColor="#545454" stop-opacity="0" />
+            <stop offset="1" stopColor="#545454" stopOpacity="0" />
           </linearGradient>
           <radialGradient
             id="paint31_radial_448_78"
@@ -975,8 +975,8 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(1529.06 466.265) rotate(90) scale(38.9802)"
           >
-            <stop offset="0.469173" stopColor="#FF5D5D" stop-opacity="0" />
-            <stop offset="1" stopColor="#FA8484" stop-opacity="0.18" />
+            <stop offset="0.469173" stopColor="#FF5D5D" stopOpacity="0" />
+            <stop offset="1" stopColor="#FA8484" stopOpacity="0.18" />
           </radialGradient>
           <motion.linearGradient
             id="paint32_linear_448_78"
@@ -1023,9 +1023,9 @@ const HeroAsset = () => {
             }}
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#793D3D" stop-opacity="0" />
+            <stop stopColor="#793D3D" stopOpacity="0" />
             <stop offset="0.450406" stopColor="#DC7B7B" />
-            <stop offset="1" stopColor="#793D3D" stop-opacity="0" />
+            <stop offset="1" stopColor="#793D3D" stopOpacity="0" />
           </motion.linearGradient>
           <linearGradient
             id="paint34_linear_448_78"
@@ -1036,7 +1036,7 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
           >
             <stop stopColor="#A6A6A6" />
-            <stop offset="1" stopColor="#545454" stop-opacity="0" />
+            <stop offset="1" stopColor="#545454" stopOpacity="0" />
           </linearGradient>
           <radialGradient
             id="paint35_radial_448_78"
@@ -1046,8 +1046,8 @@ const HeroAsset = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(1149.27 360.084) rotate(90) scale(34.156)"
           >
-            <stop offset="0.469173" stopColor="#FF5D5D" stop-opacity="0" />
-            <stop offset="1" stopColor="#FA8484" stop-opacity="0.18" />
+            <stop offset="0.469173" stopColor="#FF5D5D" stopOpacity="0" />
+            <stop offset="1" stopColor="#FA8484" stopOpacity="0.18" />
           </radialGradient>
           <motion.linearGradient
             id="paint36_linear_448_78"

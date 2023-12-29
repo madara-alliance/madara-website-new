@@ -4,19 +4,23 @@ import LinkedIn from "../../assets/images/socials/linkedin.png";
 import Twitter from "../../assets/images/socials/twitter.png";
 import Telegram from "../../assets/images/socials/telegram.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const socials = [
   {
     icon: Telegram,
     text: "Telegram",
+    link: "https://t.me/MadaraStarknet",
   },
   {
     icon: LinkedIn,
     text: "LinkedIn",
+    link: "https://github.com/keep-starknet-strange/madara",
   },
   {
     icon: Twitter,
     text: "X (formerly Twitter)",
+    link: "https://twitter.com/MadaraStarknet",
   },
 ];
 
@@ -36,23 +40,29 @@ const Footer = () => {
       <div className="flex flex-col items-center">
         <h1 className="text-center pb-5">
           <span className="heading">
-            Start work Smarter
+            Join us in building
             <br />
-            Get&nbsp;
+            the trustless&nbsp;
           </span>
-          <span className="heading-font red-text-gradient">Madara</span>
+          <span className="heading-font red-text-gradient">future</span>
         </h1>
 
         <div className="flex gap-x-2 lg:gap-x-12 items-center pt-16">
           {socials.map((social, idx) => (
-            <div
+            <Link
+              target="_blank"
               key={idx}
+              href={social.link}
               id={`footer-social-${idx}`}
               onMouseMove={(e) => checkCursor(e, `footer-social-${idx}`)}
               className="shine-on-cursor flex relative flex-col items-center justify-center w-[80px] p-4 h-[80px] border border-[#3B3B3B] bg-[#101010] rounded-[14px]"
             >
-              <Image src={social.icon} alt={social.text} className="object-contain" />
-            </div>
+              <Image
+                src={social.icon}
+                alt={social.text}
+                className="object-contain"
+              />
+            </Link>
           ))}
         </div>
       </div>

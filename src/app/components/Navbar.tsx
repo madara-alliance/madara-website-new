@@ -45,8 +45,8 @@ const Navbar = () => {
   }, []);
 
   const toggleNavClick = () => {
-    setIsOpen(prevState => !prevState);
-  }
+    setIsOpen((prevState) => !prevState);
+  };
   return (
     <div className="flex flex-col items-center fixed z-[100] top-0 w-full">
       <nav
@@ -85,10 +85,12 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        
-        <div className={`absolute md:static z-[1] w-full flex flex-col md:flex-row md:items-center md:justify-between transition-transform bg-black p-4 ${
-          isOpen ? "translate-y-0" : "translate-y-[-200%]"
-        } md:translate-y-0 md:p-0 lg:px-10`}>
+
+        <div
+          className={`absolute md:static z-[1] w-full flex flex-col md:flex-row md:items-center md:justify-between transition-transform bg-black p-4 ${
+            isOpen ? "translate-y-0" : "translate-y-[-200%]"
+          } md:translate-y-0 md:p-0 lg:px-10`}
+        >
           {navItems.map((item, idx) => (
             <Link
               key={idx}
@@ -103,10 +105,21 @@ const Navbar = () => {
           id="button-container"
           className="hidden md:flex items-center justify-end gap-2 transition-all opacity-0"
         >
-          <a className="text-[#FF7074] font-semibold text-lg px-5">Build now</a>
-          <button className="bg-[#BF383C] border-[1.5px] border-[#C77475] flex items-center px-5 py-2 rounded-[32px]">
-            Contribute
-          </button>
+          <Link
+            href="https://github.com/keep-starknet-strange/madara/blob/main/docs/getting-started.md"
+            target="_blank"
+            className="text-[#FF7074] font-semibold text-lg px-5"
+          >
+            Build now
+          </Link>
+          <Link
+            href="https://github.com/keep-starknet-strange/madara"
+            target="_blank"
+          >
+            <button className="bg-[#BF383C] border-[1.5px] border-[#C77475] flex items-center px-5 py-2 rounded-[32px]">
+              Contribute
+            </button>
+          </Link>
         </div>
       </nav>
       <div className="h-[1px] navbar-stroke navbar-reveal-animate "></div>

@@ -21,37 +21,37 @@ const cards = [
   {
     heading: "Designed to be faster",
     description:
-      "All chains built on the Madara stack would be connected with each other via shared sequencing layer. Interoperability should be as easy as making smart contract calls!",
+      "Cairo has been designed to be ZK friendly since day one. This makes it faster and cheaper to prove compared to any other alternative.",
     image: a1,
   },
   {
     heading: "Focus on decentralisation",
     description:
-      "All chains built on the Madara stack would be connected with each other via shared sequencing layer. Interoperability should be as easy as making smart contract calls!",
+      "Madara is focused on building a decentralised future. All Madara chains can choose their level of decentralisation, consensus algorithms and access levels.",
     image: a2,
   },
   {
     heading: "Seamless composability",
     description:
-      "Focus on your getting your thoughts out and crafting the best message while Madara.",
+      "All chains built on the Madara stack can opt-in for fast composability. Communication across chains should be as easy as making smart contract calls!",
     image: a3,
   },
   {
-    heading: "Earn for every contribution",
+    heading: "Batch proofs across chains",
     description:
-      "You can find multiple issues to pick up on our GitHub. The best part - you get paid via OnlyDust for every contribution you make",
+      "While Cairo is the most efficient language for proving, prover costs can still be high. Madara chains can choose to batch proofs with others to save costs.",
     image: a4,
+  },
+  {
+    heading: "Optimized for the best DX",
+    description:
+      "Madara is built on top of the Substrate framework. This not only makes it modular but also gives it access to years of dev tooling and packages.",
+    image: a5,
   },
   {
     heading: "Fastest growing ecosystem",
     description:
-      "All chains built on the Madara stack would be connected with each other via shared sequencing layer. Interoperability should be as easy as making smart contract calls!",
-    image: a5,
-  },
-  {
-    heading: "Create at the speed",
-    description:
-      "Focus on your getting your thoughts out and crafting the best message while Madara.",
+      "Starknet not only has one of the biggest ecosystems compared to its alternatives but also is one of the fastest growing developer communities in all of blockchain.",
     image: a6,
   },
 ];

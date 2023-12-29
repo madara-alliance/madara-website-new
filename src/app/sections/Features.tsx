@@ -11,8 +11,8 @@ import MobileCarousel from "../components/MobileCarousel";
 import createGlobe from "cobe";
 import { useOnScreen } from "../IntersectionObserver.hook";
 import { DotLottiePlayer } from "@dotlottie/react-player";
-import {useInView, useAnimate} from "framer-motion";
-import {stagger} from "framer-motion/dom";
+import { useInView, useAnimate } from "framer-motion";
+import { stagger } from "framer-motion/dom";
 
 const Card = ({ lottie }: { lottie: string }) => {
   return (
@@ -90,8 +90,16 @@ const GlobeCard = () => {
     if (canvasRef?.current && isIntersecting) {
       const globe = createGlobe(canvasRef?.current, {
         devicePixelRatio: 2,
-        height: typeof window !== "undefined" && window?.document.documentElement.clientWidth > 1024 ? 900 : 500,
-        width: typeof window !== "undefined" && window?.document.documentElement.clientWidth > 1024 ? 900 : window?.document.documentElement.clientWidth + 150,
+        height:
+          typeof window !== "undefined" &&
+          window?.document.documentElement.clientWidth > 1024
+            ? 900
+            : 500,
+        width:
+          typeof window !== "undefined" &&
+          window?.document.documentElement.clientWidth > 1024
+            ? 900
+            : window?.document.documentElement.clientWidth + 150,
         phi: 2 * Math.PI,
         theta: 0,
         dark: 1,
@@ -132,7 +140,11 @@ const GlobeCard = () => {
         ref={canvasRef}
         style={{
           width: "100%",
-          height: typeof window !== "undefined" && window?.document.documentElement.clientWidth >= 1024 ? "100%" : "250px",
+          height:
+            typeof window !== "undefined" &&
+            window?.document.documentElement.clientWidth >= 1024
+              ? "100%"
+              : "250px",
           maxWidth: "450px",
           aspectRatio: 1,
         }}
@@ -145,19 +157,19 @@ const copies = [
   {
     heading: "Built in the<br/>correct way",
     description:
-      "Madara has made developing blockchains using the Starknet technology open source and self-serve for the first time. Setup Madara, deploy your contracts and push to mainnet!",
+      "Madara has been open-source since day one and has over 70+ contributors all over the world. We value your work which is why you get paid for every contribution you make!",
     cardAsset: () => <GlobeCard />,
   },
   {
     heading: "Battle tested<br/>for the future",
     description:
-      "The Starknet technology has been used in production for almost 4 years and is used by the likes of dYdX, Sorare and Immutable. It is based on Cairo - the most efficient provable language that exists today.",
+      "The Starknet technology has been used in production for almost 4 years and is used by the likes of dYdX, Sorare and Paradex. It is based on Cairo - the most efficient provable language that exists today.",
     cardAsset: () => <Card lottie="./battle_tested_for_future.lottie" />,
   },
   {
-    heading: "Built in the<br/>correct way",
+    heading: "Own the stack<br/>you build on",
     description:
-      "Madara has been open-source since day one and has over 70+ contributors all over the world. We value your work which is why you get paid for every contribution you make!",
+      "While Madara gives you a Starknet clone out of the box, there is no Starknet hardcoded into our design. Every component is customisable and can be modified as per the needs of your application.",
     cardAsset: () => <Card lottie="./fold3.lottie" />,
   },
 ];
@@ -366,9 +378,7 @@ const FeaturesDesktop = () => {
 
 const FeaturesMobile = () => {
   const [currentActive, setCurrentActive] = React.useState(0);
-  const handleSlideChange = () => {
-
-  }
+  const handleSlideChange = () => {};
   return (
     <>
       <div className="pt-10" id="left-container">
@@ -394,24 +404,31 @@ const FeaturesMobile = () => {
 
 const Features = () => {
   const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>();
-  const [scope, animate] = useAnimate()
-  const isInView = useInView(scope, { amount: 0.2, once: true })
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope, { amount: 0.2, once: true });
 
   React.useEffect(() => {
-    if(isInView) {
-      animate(scope.current, {
-        opacity: [0, 1],
-        y: ['10%', '0%']
-      }, {
-        delay: stagger(0.2),
-        duration: 0.5
-      })
+    if (isInView) {
+      animate(
+        scope.current,
+        {
+          opacity: [0, 1],
+          y: ["10%", "0%"],
+        },
+        {
+          delay: stagger(0.2),
+          duration: 0.5,
+        }
+      );
     }
   }, [isInView]);
-  
+
   return (
     <section className="lg:h-[300vh] lg:px-10" id="container" ref={ref}>
-      <div className="flex flex-col lg:flex-row  lg:justify-between h-screen relative" ref={scope}>
+      <div
+        className="flex flex-col lg:flex-row  lg:justify-between h-screen relative"
+        ref={scope}
+      >
         {width >= 768 ? <FeaturesDesktop /> : <FeaturesMobile />}
       </div>
     </section>
