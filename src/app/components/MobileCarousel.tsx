@@ -12,12 +12,13 @@ const MobileCarousel = ({ children, handleSlideChange }: { children: React.React
           prevEl: ".swiper-button-prev",
         }}
         modules={[Navigation]}
-        grabCursor={true}
+        centeredSlides={false}
         slidesPerView={1.2}
-        spaceBetween={0}
+        spaceBetween={10}
         loop={true}
-        onSlideChange={({ activeIndex }) => {
-          handleSlideChange?.(activeIndex);
+        onSlideChange={(swiper) => {
+          console.log(swiper);
+          handleSlideChange?.(swiper.realIndex);
         }}
       >
         {children}

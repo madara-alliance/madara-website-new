@@ -376,18 +376,77 @@ const FeaturesDesktop = () => {
   );
 };
 
+const FeatureCopyMobile = ({
+  heading,
+  description,
+}: {
+  heading: string;
+  description: string;
+}) => {
+  const [displayHeading, setDisplayHeading] = React.useState(heading);
+  const [displayDescription, setDisplayDescription] =
+    React.useState(description);
+  const [scope, animate] = useAnimate();
+
+  React.useEffect(() => {
+    console.log(heading, description);
+    
+    (async () => {
+      await animate(
+        scope.current,
+        {
+          opacity: [1, 0],
+          y: ["0%", "-10%"],
+        },
+        {
+          duration: 0.6,
+        }
+      );
+      setDisplayDescription(description);
+      setDisplayHeading(heading);
+      await animate(
+        scope.current,
+        {
+          opacity: [0, 1],
+          y: ["10%", "0%"],
+        },
+        {
+          duration: 0.6,
+        }
+      );
+    })()
+  }, [heading, description]);
+
+  return (
+    <div
+      className="flex flex-col justify-center lg:h-screen text-left lg:sticky top-0 left-0"
+      id="feature-copy-container"
+      ref={scope}
+    >
+      <h1
+        className="pb-5 heading"
+        dangerouslySetInnerHTML={{ __html: displayHeading }}
+      />
+      <h2
+        className="text-texting-secondary pb-10 text-md"
+        dangerouslySetInnerHTML={{ __html: displayDescription }}
+      />
+    </div>
+  );
+};
+
 const FeaturesMobile = () => {
   const [currentActive, setCurrentActive] = React.useState(0);
-  const handleSlideChange = () => {};
+
+  const handleSlideChange = (idx) => {
+    console.log(idx);
+    
+    setCurrentActive(idx);
+  };
   return (
     <>
       <div className="pt-10" id="left-container">
-        <div className="flex flex-col justify-center lg:h-screen text-left lg:sticky top-0 left-0">
-          <h1
-            className="pb-10 heading"
-            dangerouslySetInnerHTML={{ __html: copies[currentActive].heading }}
-          />
-        </div>
+        <FeatureCopyMobile heading={copies[currentActive].heading} description={copies[currentActive].description} />
       </div>
       <div className="ml-[-1.5rem] mr-[-1.5rem]">
         <MobileCarousel handleSlideChange={handleSlideChange}>
@@ -426,7 +485,7 @@ const Features = () => {
   return (
     <section className="lg:h-[300vh] lg:px-10" id="container" ref={ref}>
       <div
-        className="flex flex-col lg:flex-row  lg:justify-between h-screen relative"
+        className="flex py-10 flex-col lg:flex-row  lg:justify-between lg:h-screen relative"
         ref={scope}
       >
         {width >= 768 ? <FeaturesDesktop /> : <FeaturesMobile />}
