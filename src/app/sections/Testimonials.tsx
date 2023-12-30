@@ -14,7 +14,7 @@ import { useInView, useAnimate } from "framer-motion";
 import { stagger } from "framer-motion/dom";
 
 const Card = ({ data }) => (
-  <div className="flex flex-col items-center p-4 py-5 lg:p-12 text-center border border-[#3B3B3B] bg-gradient-to-r bg-[#101010] rounded-[28px] ">
+  <div className="flex flex-col items-center p-4 py-5 lg:p-6 text-center border border-[#4A4A4A] bg-gradient-to-r bg-[#000000] rounded-2xl">
     <div className="w-[70px] h-[70px] rounded-[50%] mb-4">
       <Image src={data.icon} alt={data.heading} className="rounded-[50%]" />
     </div>
@@ -95,7 +95,7 @@ const setTranslate = (swiper) => {
     // var rotateZ = 0
     let translateZ = -translate * Math.abs(offsetMultiplier);
 
-    let translateX = 30 * offsetMultiplier;
+    let translateX = 45 * offsetMultiplier;
 
     let scale = 1 - (1 - 0.8) * Math.abs(offsetMultiplier);
     let blur = 2 * Math.abs(offsetMultiplier);
@@ -113,6 +113,7 @@ const setTranslate = (swiper) => {
 const Testimonials = () => {
   const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>();
   const [scope, animate] = useAnimate();
+  const swiperRef = React.useRef<any>(null);
   const isInView = useInView(scope, { amount: 0.2, once: true });
 
   React.useEffect(() => {
@@ -156,10 +157,15 @@ const Testimonials = () => {
                     el.style.transitionDuration = `${duration}ms`;
                   });
                 }}
+                onInit={(swiper) => {
+                  swiperRef.current = swiper;
+                }}
               >
                 {[...items, ...items].map((item, idx) => {
                   return (
-                    <SwiperSlide key={idx}>
+                    <SwiperSlide key={idx} onClick={() => {
+                      swiperRef.current?.slideTo(idx);
+                    }}>
                       <Card data={item} />
                     </SwiperSlide>
                   );

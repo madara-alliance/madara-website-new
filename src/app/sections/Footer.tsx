@@ -36,8 +36,8 @@ const Footer = () => {
   };
 
   return (
-    <section className="h-screen flex flex-col items-center justify-between pt-48 pb-20">
-      <div className="flex flex-col items-center">
+    <section className="h-screen flex flex-col items-center">
+      <div className="flex flex-col items-center justify-center h-[calc(100vh-100px)] md:h-[calc(100vh-156px)]">
         <h1 className="text-center pb-5">
           <span className="heading">
             Join us in building
@@ -47,7 +47,7 @@ const Footer = () => {
           <span className="heading-font red-text-gradient">future</span>
         </h1>
 
-        <div className="flex gap-x-2 lg:gap-x-12 items-center pt-16">
+        <div className="flex gap-x-2 lg:gap-x-12 items-center pt-20">
           {socials.map((social, idx) => (
             <Link
               target="_blank"
@@ -66,8 +66,8 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="text-sm lg:text-xl text-white/30 font-normal pt-32 text-center">
-        Copyright © 2023-24 Madara copyright name.
+      <div className="text-sm lg:text-xl text-white/30 font-normal pb-20 md:pb-32 text-center">
+        Copyright © 2023-24 Madara
       </div>
     </section>
   );

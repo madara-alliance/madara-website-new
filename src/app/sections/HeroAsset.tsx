@@ -16,7 +16,7 @@ const HeroAsset = () => {
   }, [isInView]);
 
   return (
-    <div className="z-[0] w-full flex items-center justify-center animate-[enter_0.6s_ease-in_backwards_0.4s]"  ref={scope}>
+    <div className="z-[0] relative w-full flex items-center justify-center animate-[enter_0.6s_ease-in_backwards_0.4s]"  ref={scope}>
       <motion.svg
         initial="hidden"
         height="100%"
@@ -1087,6 +1087,7 @@ const HeroAsset = () => {
           </clipPath>
         </defs>
       </motion.svg>
+      <div className={`${shouldPlay ? 'glow-circle': ""} absolute md:w-[75vw_!important] bottom-0 blur-[150px]`} />
     </div>
   );
 };

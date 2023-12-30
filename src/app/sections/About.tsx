@@ -9,12 +9,12 @@ import MobileCarousel from "../components/MobileCarousel";
 import { SwiperSlide } from "swiper/react";
 import { useInView, useAnimate } from "framer-motion";
 import { stagger } from "framer-motion/dom";
-import a1 from "../../assets/images/about/design_to_be_faster.svg";
-import a2 from "../../assets/images/about/decentralised.svg";
-import a3 from "../../assets/images/about/seemless_compatability.svg";
-import a4 from "../../assets/images/about/earn_for_every.svg";
-import a5 from "../../assets/images/about/fastest_growing.svg";
-import a6 from "../../assets/images/about/create_at_the_speed.svg";
+import a1 from "../../assets/images/about/design_to_be_faster.webp";
+import a2 from "../../assets/images/about/decentralised.webp";
+import a3 from "../../assets/images/about/seemless_compatability.webp";
+import a4 from "../../assets/images/about/batch_proof.webp";
+import a5 from "../../assets/images/about/fastest_growing.webp";
+import a6 from "../../assets/images/about/earn_for_every.webp";
 import Image from "next/image";
 
 const cards = [
