@@ -12,6 +12,7 @@ const navItems = [
   {
     text: "Docs",
     link: "https://docs.madara.zone/",
+    newTab: true,
   },
   {
     text: "Ecosystem",
@@ -93,6 +94,7 @@ const Navbar = () => {
         >
           {navItems.map((item, idx) => (
             <Link
+              target={item.newTab ? "_blank" : ""}
               key={idx}
               href={item.link}
               className="text-[#C0C0C0] hover:text-white text-md active:text-white"

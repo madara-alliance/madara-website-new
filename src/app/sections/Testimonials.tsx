@@ -133,7 +133,7 @@ const Testimonials = () => {
   }, [isInView]);
 
   return (
-    <section ref={ref} className="py-36">
+    <section ref={ref} className="py-36" id="#testimonials">
       <div className="testimonial-container" ref={scope}>
         <h1 className="heading pb-14 text-center testimonial-item opacity-0">Word on the street</h1>
         <div className="flex flex-col lg:flex-row lg:justify-between relative testimonial-item opacity-0">
@@ -163,9 +163,7 @@ const Testimonials = () => {
               >
                 {[...items, ...items].map((item, idx) => {
                   return (
-                    <SwiperSlide key={idx} onClick={() => {
-                      swiperRef.current?.slideTo(idx);
-                    }}>
+                    <SwiperSlide key={idx}>
                       <Card data={item} />
                     </SwiperSlide>
                   );

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import LinkedIn from "../../assets/images/socials/linkedin.png";
+import Github from "../../assets/images/socials/github.png";
 import Twitter from "../../assets/images/socials/twitter.png";
 import Telegram from "../../assets/images/socials/telegram.png";
 import Image from "next/image";
@@ -13,8 +13,8 @@ const socials = [
     link: "https://t.me/MadaraStarknet",
   },
   {
-    icon: LinkedIn,
-    text: "LinkedIn",
+    icon: Github,
+    text: "Github",
     link: "https://github.com/keep-starknet-strange/madara",
   },
   {
@@ -36,7 +36,7 @@ const Footer = () => {
   };
 
   return (
-    <section className="h-screen flex flex-col items-center">
+    <section className="h-screen flex flex-col items-center" id="footer">
       <div className="flex flex-col items-center justify-center h-[calc(100vh-100px)] md:h-[calc(100vh-156px)]">
         <h1 className="text-center pb-5">
           <span className="heading">
