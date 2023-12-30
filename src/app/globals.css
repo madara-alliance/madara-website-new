@@ -165,6 +165,13 @@ body {
     .animation {
       height: 100%;
     }
+    svg {
+      border-radius: 18px;
+      @media screen and (min-width: 640px) {
+        border-radius: 48px;
+
+      }
+    }
   }
   @keyframes increaseWidth {
     from {

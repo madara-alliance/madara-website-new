@@ -18,7 +18,7 @@ const Card = ({ lottie }: { lottie: string }) => {
   return (
     <div className="h-[400px] lg:h-[500px] w-full bg-[#101010] flex items-center justify-center lg:rounded-[48px] rounded-[18px]">
       <DotLottiePlayer
-        className="fix-lottie-container"
+        className="fix-lottie-container lg:rounded-[48px] rounded-[18px]"
         src={lottie}
         loop
         autoplay
