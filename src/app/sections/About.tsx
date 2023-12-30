@@ -107,7 +107,7 @@ const About = () => {
         {
           delay: stagger(0.2),
           duration: 0.5,
-        }
+        },
       );
     }
   }, [isInView]);
@@ -129,11 +129,11 @@ const About = () => {
 
           el?.style.setProperty(
             "--cursor-x",
-            `${String(e.clientX - left ?? 0)}px`
+            `${String(e.clientX - left ?? 0)}px`,
           );
           el?.style.setProperty(
             "--cursor-y",
-            `${String(e.clientY - top ?? 0)}px`
+            `${String(e.clientY - top ?? 0)}px`,
           );
         }
       });
@@ -142,7 +142,7 @@ const About = () => {
 
   return (
     <section className="py-10 maast-borders" ref={ref}>
-      <h1 className="heading pb-14 text-center">Word on the street</h1>
+      <h1 className="heading pb-14 text-center">More than a framework</h1>
       <div
         ref={scope}
         id="about-container"
