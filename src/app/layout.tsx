@@ -16,7 +16,8 @@ const Geist = localFont({
 
 export const metadata: Metadata = {
   title: "Madara: Building the world integrity web",
-  description: "Madara is an open source framework that allows you to build app chains powered by Cairo and Starknet technology",
+  description:
+    "Madara is an open source stack that allows you to build app chains powered by Cairo and Starknet technology",
 };
 
 export default function RootLayout({
@@ -35,13 +36,13 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
         <meta
           name="description"
-          content="Madara is an open source framework that allows you to build app chains
+          content="Madara is an open source stack that allows you to build app chains
           powered by Cairo and Starknet technology"
         />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Madara is an open source framework that allows you to build app chains
+          content="Madara is an open source stack that allows you to build app chains
           powered by Cairo and Starknet technology"
           key="og:title"
         />
