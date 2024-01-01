@@ -6,6 +6,7 @@ import Testimonials from "./sections/Testimonials";
 import Navbar from "./components/Navbar";
 import Architecture from "./sections/Architecture";
 import HeroAsset from "./sections/HeroAsset";
+import TestimonialsNew from "./sections/TestimonialsNew";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       </div>
       <main
         id="main"
-        className="lg:px-32 md:px-28 sm:px-20 px-6 bg-[url('https://uploads-ssl.webflow.com/6408bea3de5aef58b7e197d4/6438c3059d443cd7a78762eb_stars-bg.png')]"
+        className="max-w-[1300px] m-[0_auto] sm:px-20 px-6 bg-black bg-[url('https://uploads-ssl.webflow.com/6408bea3de5aef58b7e197d4/6438c3059d443cd7a78762eb_stars-bg.png')]"
       >
         <Hero />
         <HeroAsset />

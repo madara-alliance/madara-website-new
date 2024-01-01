@@ -199,7 +199,7 @@ const Architecture = () => {
   }, [isInView]);
 
   return (
-    <section className="pb-32" id="architecture" ref={scope}>
+    <section className="md:pb-32" id="architecture" ref={scope}>
       <h1 className="heading pb-14 text-center architecture-content opacity-0">Madara Architecture</h1>
       <div className="architecture-content opacity-0">
         <svg

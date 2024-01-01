@@ -208,8 +208,8 @@ const FeaturesDesktop = () => {
         .timeline({
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "30% top",
-            end: "34% top",
+            start: "20% top",
+            end: "25% top",
             scrub: 0.5,
             toggleActions: "play none reverse none",
           },
@@ -239,7 +239,7 @@ const FeaturesDesktop = () => {
                     scrub: 0.5,
                     trigger: containerRef.current,
                     start: "50% top",
-                    end: "61% top",
+                    end: "55% top",
                     toggleActions: "play none reverse none",
                   },
                 })
@@ -290,8 +290,8 @@ const FeaturesDesktop = () => {
         .timeline({
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "24% top",
-            end: "34% top",
+            start: "20% top",
+            end: "25% top",
             scrub: 0.5,
             toggleActions: "play none reverse none",
           },
@@ -390,32 +390,35 @@ const FeatureCopyMobile = ({
 
   React.useEffect(() => {
     console.log(heading, description);
-    
-    (async () => {
-      await animate(
-        scope.current,
-        {
-          opacity: [1, 0],
-          y: ["0%", "-10%"],
-        },
-        {
-          duration: 0.6,
+    if(scope.current) {
+      (async () => {
+        await animate(
+          scope.current,
+          {
+            opacity: [1, 0],
+            y: ["0%", "-10%"],
+          },
+          {
+            duration: 0.6,
+          }
+        );
+        setDisplayDescription(description);
+        setDisplayHeading(heading);
+        if(scope.current) {
+          await animate(
+            scope.current,
+            {
+              opacity: [0, 1],
+              y: ["10%", "0%"],
+            },
+            {
+              duration: 0.6,
+            }
+          );
         }
-      );
-      setDisplayDescription(description);
-      setDisplayHeading(heading);
-      await animate(
-        scope.current,
-        {
-          opacity: [0, 1],
-          y: ["10%", "0%"],
-        },
-        {
-          duration: 0.6,
-        }
-      );
-    })()
-  }, [heading, description]);
+      })()
+    }
+  }, [scope.current, heading, description]);
 
   return (
     <div
@@ -428,7 +431,7 @@ const FeatureCopyMobile = ({
         dangerouslySetInnerHTML={{ __html: displayHeading }}
       />
       <h2
-        className="text-texting-secondary pb-10 text-md"
+        className="text-texting-secondary mb-10 text-md line-clamp-5 md:line-clamp-none"
         dangerouslySetInnerHTML={{ __html: displayDescription }}
       />
     </div>

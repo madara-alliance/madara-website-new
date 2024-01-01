@@ -39,15 +39,15 @@ body {
 
 @layer components {
   .heading-font {
-    font-size: 38px;
+    font-size: 28px;
     font-weight: 600;
     line-height: 98.634%; /* 78.907px */
     letter-spacing: -2.4px;
     @media screen and (min-width: 321px) {
-      font-size: 42px;
-      font-weight: 600;
+      font-size: 36px;
+      font-weight: 500;
       line-height: 98.634%; /* 78.907px */
-      letter-spacing: -2.4px;
+      letter-spacing: -1px;
     }
 
     @media screen and (min-width: 640px) {
@@ -70,7 +70,7 @@ body {
     -webkit-text-fill-color: transparent;
   }
   .glow-circle {
-    z-index: -1;
+    z-index: 0;
     border-radius: 50%;
     background: radial-gradient(
       60px at center,
@@ -78,7 +78,7 @@ body {
       rgba(239, 49, 106, 0.1) 100%
     );
     filter: blur(60px);
-    animation: glow 1000ms linear forwards 100ms;
+    animation: glow 1000ms linear forwards 400ms;
     @media screen and (min-width: 640px) {
       background: radial-gradient(
         500px at center,

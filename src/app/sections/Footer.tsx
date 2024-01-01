@@ -36,8 +36,8 @@ const Footer = () => {
   };
 
   return (
-    <section className="h-screen flex flex-col items-center" id="footer">
-      <div className="flex flex-col items-center justify-center h-[calc(100vh-100px)] md:h-[calc(100vh-156px)]">
+    <section className="flex flex-col items-center justify-center py-24 pb-32 md:pb-64" id="footer">
+      <div className="flex flex-col items-center justify-center">
         <h1 className="text-center pb-5">
           <span className="heading">
             Join us in building
@@ -47,7 +47,7 @@ const Footer = () => {
           <span className="heading-font red-text-gradient">future</span>
         </h1>
 
-        <div className="flex gap-x-2 lg:gap-x-12 items-center pt-20">
+        <div className="flex gap-x-5 lg:gap-x-12 items-center pt-12 md:pt-20">
           {socials.map((social, idx) => (
             <Link
               target="_blank"
@@ -55,7 +55,7 @@ const Footer = () => {
               href={social.link}
               id={`footer-social-${idx}`}
               onMouseMove={(e) => checkCursor(e, `footer-social-${idx}`)}
-              className="shine-on-cursor flex relative flex-col items-center justify-center w-[80px] p-4 h-[80px] border border-[#3B3B3B] bg-[#101010] rounded-[14px]"
+              className="shine-on-cursor flex relative flex-col items-center justify-center w-[60px] p-4 h-[60px] md:w-[80px] md:h-[80px] border border-[#3B3B3B] bg-[#101010] rounded-[8px] md:rounded-[14px]"
             >
               <Image
                 src={social.icon}
@@ -65,9 +65,6 @@ const Footer = () => {
             </Link>
           ))}
         </div>
-      </div>
-      <div className="text-sm lg:text-xl text-white/30 font-normal pb-20 md:pb-32 text-center">
-        Copyright © 2023-24 Madara
       </div>
     </section>
   );

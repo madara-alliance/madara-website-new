@@ -52,7 +52,7 @@ const Navbar = () => {
     <div className="flex flex-col items-center fixed z-[100] top-0 w-full">
       <nav
         id="nav"
-        className="w-full z-[100] md:grid md:grid-cols-[1fr_2fr_1fr] lg:px-32 md:px-28 sm:px-20 px-6  bg-black/90"
+        className="max-w-[1400px] w-full z-[100] md:grid md:grid-cols-[1fr_2fr_1fr] lg:px-32 md:px-28 sm:px-20 px-6  bg-black/90"
         style={{ backdropFilter: "blur(4px)" }}
       >
         <div className="py-4 flex justify-between items-center">
@@ -88,9 +88,9 @@ const Navbar = () => {
         </div>
 
         <div
-          className={`absolute md:static z-[1] w-full flex flex-col md:flex-row md:items-center md:justify-between transition-transform bg-black p-4 ${
+          className={`absolute md:static z-[1] w-full flex flex-col md:flex-row md:items-center md:justify-between transition-transform bg-black ${
             isOpen ? "translate-y-0" : "translate-y-[-200%]"
-          } md:translate-y-0 md:p-0 lg:px-10`}
+          } md:translate-y-0 md:p-0 lg:px-8 lg:max-w-[500px]`}
         >
           {navItems.map((item, idx) => (
             <Link

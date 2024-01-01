@@ -13,8 +13,7 @@ const MobileCarousel = ({ children, handleSlideChange }: { children: React.React
         }}
         modules={[Navigation]}
         centeredSlides={false}
-        slidesPerView={1.2}
-        spaceBetween={10}
+        slidesPerView={1.3}
         loop={true}
         onSlideChange={(swiper) => {
           console.log(swiper);

@@ -20,7 +20,7 @@ const HeroAsset = () => {
       <motion.svg
         initial="hidden"
         height="100%"
-        width="75%"
+        className="w-[90%] md:w-[75%]"
         viewBox="0 0 1705 961"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -1087,7 +1087,7 @@ const HeroAsset = () => {
           </clipPath>
         </defs>
       </motion.svg>
-      <div className={`${shouldPlay ? 'glow-circle': ""} absolute md:w-[75vw_!important] bottom-0 blur-[150px]`} />
+      <div className={`${shouldPlay ? 'glow-circle': ""} absolute w-[75vw_!important] bottom-0 blur-[50px] md:blur-[150px]`} />
     </div>
   );
 };
