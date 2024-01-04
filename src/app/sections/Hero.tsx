@@ -8,7 +8,7 @@ const Hero = () => {
     <section className="h-[500px] md:min-h-[760px] mt-[84px] md:mt-0 md:h-[calc(100vh-150px)] flex flex-col justify-center items-center overflow-hidden">
       <div className="flex flex-col items-center">
         <h1 className="text-center pb-3 heading md:pb-5 animate-[enter_0.6s_ease-in_backwards_0.4s] md:text-7xl">
-          Building the world
+          Building the
           <br />
           integrity web
         </h1>
