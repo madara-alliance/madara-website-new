@@ -3,6 +3,7 @@ import React from "react";
 import MadaraLogo from "../../assets/images/madara_logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import useResizeObserver from "use-resize-observer";
 
 const navItems = [
   {
@@ -27,6 +28,8 @@ const navItems = [
 const Navbar = () => {
   const scrollRef = React.useRef<number>(0);
   const [isOpen, setIsOpen] = React.useState(false);
+  const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>();
+
   React.useEffect(() => {
     const handleScroll = () => {
       const el = document.getElementById("button-container");
@@ -46,16 +49,26 @@ const Navbar = () => {
   }, []);
 
   const toggleNavClick = () => {
-    setIsOpen((prevState) => !prevState);
+    setIsOpen((prevState) => {
+      if (!prevState) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "visible";
+      }
+      return !prevState;
+    });
   };
   return (
-    <div className="flex flex-col items-center fixed z-[100] top-0 w-full">
+    <div
+      className="flex flex-col items-center fixed z-[100] top-0 w-full"
+      ref={ref}
+    >
       <nav
         id="nav"
         className="max-w-[1400px] w-full z-[100] md:grid md:grid-cols-[1fr_2fr_1fr] lg:px-32 md:px-28 sm:px-20 px-6  bg-black/90"
         style={{ backdropFilter: "blur(4px)" }}
       >
-        <div className="py-4 flex justify-between items-center">
+        <div className="py-4 flex justify-between items-center z-[100]">
           <div className="flex items-center">
             <Image src={MadaraLogo} alt="madara logo" />
             <h2 className="font-bold">MADARA</h2>
@@ -64,65 +77,98 @@ const Navbar = () => {
             onClick={toggleNavClick}
             data-collapse-toggle="navbar-default"
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-            aria-controls="navbar-default"
-            aria-expanded={isOpen ? "true" : "false"}
+            className="flex flex-col gap-y-[6px]  md:hidden focus:bg-none"
           >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
+            <div className={`w-[25px] h-[1px] bg-white transition-transform ${isOpen ? "rotate-45 translate-y-[7px]" : "" }`} />
+            <div className={`w-[25px] h-[1px] bg-white ${isOpen ? "hidden" : "visible" }`} />
+            <div className={`w-[25px] h-[1px] bg-white transition-transform ${isOpen ? "-rotate-45 translate-y-[0px]" : "" }`} />
           </button>
         </div>
-
-        <div
-          className={`absolute md:static z-[1] w-full flex flex-col md:flex-row md:items-center md:justify-between transition-transform bg-black ${
-            isOpen ? "translate-y-0" : "translate-y-[-200%]"
-          } md:translate-y-0 md:p-0 lg:px-8 lg:max-w-[500px]`}
-        >
-          {navItems.map((item, idx) => (
-            <Link
-              target={item.newTab ? "_blank" : ""}
-              key={idx}
-              href={item.link}
-              className="text-[#C0C0C0] hover:text-white text-md active:text-white"
+        {width < 768 ? (
+          <>
+            <div
+              className={`absolute z-[0] left-0 px-8 py-10 flex flex-col transition-opacity duration-800 bg-black h-[calc(100vh-84px)] w-full md:h-auto gap-y-10 ${
+                isOpen ? "opacity-1 translate-y-0" : "opacity-0 translate-y-[-200%]"
+              }`}
             >
-              {item.text}
-            </Link>
-          ))}
-        </div>
-        <div
-          id="button-container"
-          className="hidden md:flex items-center justify-end gap-2 transition-all opacity-0"
-        >
-          <Link
-            href="https://github.com/keep-starknet-strange/madara/blob/main/docs/getting-started.md"
-            target="_blank"
-            className="text-[#FF7074] font-semibold text-lg px-5"
-          >
-            Build now
-          </Link>
-          <Link
-            href="https://github.com/keep-starknet-strange/madara"
-            target="_blank"
-          >
-            <button className="bg-[#BF383C] border-[1.5px] border-[#C77475] flex items-center px-5 py-2 rounded-[32px]">
-              Contribute
-            </button>
-          </Link>
-        </div>
+              {navItems.map((item, idx) => (
+                <Link
+                  onClick={() => {
+                    toggleNavClick();
+                    if(item.link.includes("#testimonials")) document.getElementById(item.link)?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  target={item.newTab ? "_blank" : ""}
+                  key={idx}
+                  href={item.link === "#testimonials" ? "javascript:void(0);" : item.link}
+                  className="text-[#C0C0C0] hover:text-white text-md active:text-white "
+                >
+                  {item.text}
+                </Link>
+              ))}
+
+              <div className="flex items-center gap-x-4 mt-auto">
+                <Link
+                  href="https://github.com/keep-starknet-strange/madara"
+                  target="_blank"
+                >
+                  <button className="bg-[#BF383C] border-[1.5px] border-[#C77475] flex items-center px-5 py-2 rounded-[32px]">
+                    Contribute
+                  </button>
+                </Link>
+                <Link
+                  href="https://github.com/keep-starknet-strange/madara/blob/main/docs/getting-started.md"
+                  target="_blank"
+                  className="text-[#FF7074] font-semibold text-lg border border-[#C77475] rounded-[32px] px-5 py-2"
+                >
+                  Build now
+                </Link>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+          <div className="flex items-center justify-center">
+            <div
+              className={`flex items-center justify-between min-w-[400px] max-w-[500px] gap-y-10`}
+            >
+              {navItems.map((item, idx) => (
+                <Link
+                  onClick={() => {
+                    toggleNavClick();
+                  }}
+                  target={item.newTab ? "_blank" : ""}
+                  key={idx}
+                  href={item.link}
+                  className="text-[#C0C0C0] hover:text-white text-md active:text-white "
+                >
+                  {item.text}
+                </Link>
+              ))}
+             
+            </div>
+          </div>
+            <div
+              id="button-container"
+              className="hidden md:flex items-center justify-end gap-2 transition-all opacity-0"
+            >
+              <Link
+                href="https://github.com/keep-starknet-strange/madara/blob/main/docs/getting-started.md"
+                target="_blank"
+                className="text-[#FF7074] font-semibold text-lg px-5"
+              >
+                Build now
+              </Link>
+              <Link
+                href="https://github.com/keep-starknet-strange/madara"
+                target="_blank"
+              >
+                <button className="bg-[#BF383C] border-[1.5px] border-[#C77475] flex items-center px-5 py-2 rounded-[32px]">
+                  Contribute
+                </button>
+              </Link>
+            </div>
+          </>
+        )}
       </nav>
       <div className="h-[1px] navbar-stroke navbar-reveal-animate "></div>
     </div>

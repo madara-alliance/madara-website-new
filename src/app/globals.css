@@ -24,6 +24,10 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 @keyframes glow {
@@ -73,7 +77,7 @@ body {
     z-index: 0;
     border-radius: 50%;
     background: radial-gradient(
-      60px at center,
+      50px at center,
       #fc6767 0%,
       rgba(239, 49, 106, 0.1) 100%
     );

@@ -10,18 +10,24 @@ import { Navigation } from "swiper/modules";
 import MobileCarousel from "../components/MobileCarousel";
 import createGlobe from "cobe";
 import { useOnScreen } from "../IntersectionObserver.hook";
-import { DotLottiePlayer } from "@dotlottie/react-player";
+import { DotLottieCommonPlayer, DotLottiePlayer } from "@dotlottie/react-player";
 import { useInView, useAnimate } from "framer-motion";
 import { stagger } from "framer-motion/dom";
 
 const Card = ({ lottie }: { lottie: string }) => {
+  const lottieRef = React.useRef<DotLottieCommonPlayer>(null);
+
+  React.useEffect(() => {
+    lottieRef?.current?.playOnShow({ threshold: [0.5] })
+  }, []);
+
   return (
     <div className="h-[400px] lg:h-[500px] w-full bg-[#101010] flex items-center justify-center lg:rounded-[48px] rounded-[18px]">
       <DotLottiePlayer
         className="fix-lottie-container lg:rounded-[48px] rounded-[18px]"
         src={lottie}
         loop
-        autoplay
+        ref={lottieRef}
       ></DotLottiePlayer>
     </div>
   );
