@@ -16,14 +16,17 @@
   }
 }
 
+@layer base {
+  html {
+    @apply bg-black;
+  }
+  body {
+    @apply bg-black;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
   button,
   a {
     -webkit-tap-highlight-color: transparent;
@@ -173,7 +176,6 @@ body {
       border-radius: 18px;
       @media screen and (min-width: 640px) {
         border-radius: 48px;
-
       }
     }
   }
@@ -258,7 +260,7 @@ body {
   .maast-border-content > *:after {
     background: radial-gradient(
       var(--circle-size, 600px) circle at var(--cursor-x) var(--cursor-y),
-      rgba(241,152,152, 0.4),
+      rgba(241, 152, 152, 0.4),
       transparent 40%
     );
     z-index: 1;
