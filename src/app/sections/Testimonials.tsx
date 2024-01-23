@@ -52,7 +52,7 @@ const items = [
     subheading: "Building a zk Oracle",
     icon: PragmaLogo,
     description:
-      "Madara stands out as an ideal combination of advanced technologies, utilizing both the CairoVM and Substrate frameworks. This new kind of stack provides the essential flexibility we require to create a highly efficient and provable oracle solution.",
+      "Madara stands out as an ideal combination of advanced technologies, utilizing both the CairoVM and the Substrate framework. This new kind of stack provides the essential flexibility we require to create a highly efficient and provable oracle solution.",
   },
 
   {
@@ -60,7 +60,7 @@ const items = [
     subheading: "Building a full node, Deoxys",
     icon: KasarLabsLogo,
     description:
-      "Madara is the result of 6 years of development from ParityTech, modernized for today's tastes by the skilled developers from Starknet. It represents an impressive demonstration of what can be achieved through open source by potentially being one of the most powerful engine in the world of Blockchain.",
+      "Madara is the result of 6 years of development from Parity, modernized for today's tastes by the skilled developers from Starknet. It's a demonstration of what can be achieved via open source by potentially being one of the most powerful engines in Blockchain.",
   },
 
   {
@@ -68,7 +68,7 @@ const items = [
     subheading: "Building rollup infra",
     icon: KarnotLogo,
     description:
-      "At Karnot, our mission is to help app chain developers to build on top of the most efficient tech. Madara with the CairoVM helps us deliver exactly that. Madara app chains are not only the most performant but are also highly modular - there is no design hardcoded and you can replace any component you like.",
+      "Our mission is to help developers build on the most efficient tech. Madara with the CairoVM helps us deliver exactly that. Madara chains are not only performant but are also highly modular allowing you to choose among multiple DA layers, provers and even VMs.",
   },
 ];
 
@@ -127,7 +127,7 @@ const Testimonials = () => {
         {
           delay: stagger(0.1),
           duration: 0.5,
-        }
+        },
       );
     }
   }, [isInView]);
@@ -135,7 +135,9 @@ const Testimonials = () => {
   return (
     <section ref={ref} className="py-36" id="#testimonials">
       <div className="testimonial-container" ref={scope}>
-        <h1 className="heading pb-14 text-center testimonial-item opacity-0">Word on the street</h1>
+        <h1 className="heading pb-14 text-center testimonial-item opacity-0">
+          Word on the street
+        </h1>
         <div className="flex flex-col lg:flex-row lg:justify-between relative testimonial-item opacity-0">
           {width >= 768 ? (
             <div className="swiper-container">
@@ -150,7 +152,7 @@ const Testimonials = () => {
                 onSetTranslate={setTranslate}
                 onSetTransition={(swiper, duration) => {
                   const transformElements = swiper.slides.map((slideEl) =>
-                    getSlideTransformEl(slideEl)
+                    getSlideTransformEl(slideEl),
                   );
 
                   transformElements.forEach((el) => {
