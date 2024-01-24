@@ -13,12 +13,14 @@
     "cobe": "^0.6.3",
     "framer-motion": "^10.16.16",
     "gsap": "^3.12.2",
+    "mixpanel-browser": "^2.48.1",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
     "swiper": "^11.0.5"
   },
   "devDependencies": {
+    "@types/mixpanel-browser": "^2.48.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

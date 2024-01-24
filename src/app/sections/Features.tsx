@@ -395,7 +395,6 @@ const FeatureCopyMobile = ({
   const [scope, animate] = useAnimate();
 
   React.useEffect(() => {
-    console.log(heading, description);
     if(scope.current) {
       (async () => {
         await animate(
@@ -448,7 +447,6 @@ const FeaturesMobile = () => {
   const [currentActive, setCurrentActive] = React.useState(0);
 
   const handleSlideChange = (idx) => {
-    console.log(idx);
     
     setCurrentActive(idx);
   };

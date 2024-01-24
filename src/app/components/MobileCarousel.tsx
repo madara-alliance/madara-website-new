@@ -16,7 +16,6 @@ const MobileCarousel = ({ children, handleSlideChange }: { children: React.React
         slidesPerView={1.3}
         loop={true}
         onSlideChange={(swiper) => {
-          console.log(swiper);
           handleSlideChange?.(swiper.realIndex);
         }}
       >

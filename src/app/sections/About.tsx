@@ -120,13 +120,10 @@ const About = () => {
       const items = [...elements].map((item) => [...item.children]).flat();
       items.forEach((el) => {
         const rect = el?.getBoundingClientRect() as DOMRect;
-        console.log(rect);
 
         const { left, top } = rect;
 
         if (left && top) {
-          console.log(el);
-
           el?.style.setProperty(
             "--cursor-x",
             `${String(e.clientX - left ?? 0)}px`,

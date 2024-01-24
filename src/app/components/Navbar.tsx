@@ -4,6 +4,7 @@ import MadaraLogo from "../../assets/images/madara_logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import useResizeObserver from "use-resize-observer";
+import { trackEvent, trackLinks } from "../analytics";
 
 const navItems = [
   {
@@ -31,6 +32,9 @@ const Navbar = () => {
   const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>();
 
   React.useEffect(() => {
+    trackLinks("nav_link_clicked", "#nav a")
+    trackLinks("footer_link_clicked", "#footer a")
+
     const handleScroll = () => {
       const el = document.getElementById("button-container");
       if (
@@ -49,14 +53,19 @@ const Navbar = () => {
   }, []);
 
   const toggleNavClick = () => {
-    setIsOpen((prevState) => {
-      if (!prevState) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "visible";
-      }
-      return !prevState;
+    trackEvent("toggle_nav_view", {
+      isOpen: isOpen
     });
+    if(width < 768) {
+      setIsOpen((prevState) => {
+        if (!prevState) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "visible";
+        }
+        return !prevState;
+      });
+    }
   };
   return (
     <div
@@ -71,7 +80,7 @@ const Navbar = () => {
         <div className="py-4 flex justify-between items-center z-[100]">
           <div className="flex items-center">
             <Image src={MadaraLogo} alt="madara logo" />
-            <h2 className="font-bold">MADARA</h2>
+            <h2 className="font-bold text-white">MADARA</h2>
           </div>
           <button
             onClick={toggleNavClick}
@@ -79,27 +88,50 @@ const Navbar = () => {
             type="button"
             className="flex flex-col gap-y-[6px]  md:hidden focus:bg-none"
           >
-            <div className={`w-[25px] h-[1px] bg-white transition-transform ${isOpen ? "rotate-45 translate-y-[7px]" : "" }`} />
-            <div className={`w-[25px] h-[1px] bg-white ${isOpen ? "hidden" : "visible" }`} />
-            <div className={`w-[25px] h-[1px] bg-white transition-transform ${isOpen ? "-rotate-45 translate-y-[0px]" : "" }`} />
+            <div
+              className={`w-[25px] h-[1px] bg-white transition-transform ${
+                isOpen ? "rotate-45 translate-y-[7px]" : ""
+              }`}
+            />
+            <div
+              className={`w-[25px] h-[1px] bg-white ${
+                isOpen ? "hidden" : "visible"
+              }`}
+            />
+            <div
+              className={`w-[25px] h-[1px] bg-white transition-transform ${
+                isOpen ? "-rotate-45 translate-y-[0px]" : ""
+              }`}
+            />
           </button>
         </div>
         {width < 768 ? (
           <>
             <div
               className={`absolute z-[0] left-0 px-8 py-10 flex flex-col transition-opacity duration-800 bg-black h-[calc(100vh-84px)] w-full md:h-auto gap-y-10 ${
-                isOpen ? "opacity-1 translate-y-0" : "opacity-0 translate-y-[-200%]"
+                isOpen
+                  ? "opacity-1 translate-y-0"
+                  : "opacity-0 translate-y-[-200%]"
               }`}
             >
               {navItems.map((item, idx) => (
                 <Link
                   onClick={() => {
-                    toggleNavClick();
-                    if(item.link.includes("#testimonials")) document.getElementById(item.link)?.scrollIntoView({ behavior: "smooth" });
+                    if(width < 768) {
+                      toggleNavClick();
+                    }
+                    if (item.link.includes("#testimonials"))
+                      document
+                        .getElementById(item.link)
+                        ?.scrollIntoView({ behavior: "smooth" });
                   }}
                   target={item.newTab ? "_blank" : ""}
                   key={idx}
-                  href={item.link === "#testimonials" ? "javascript:void(0);" : item.link}
+                  href={
+                    item.link === "#testimonials"
+                      ? "javascript:void(0);"
+                      : item.link
+                  }
                   className="text-[#C0C0C0] hover:text-white text-md active:text-white "
                 >
                   {item.text}
@@ -127,26 +159,25 @@ const Navbar = () => {
           </>
         ) : (
           <>
-          <div className="flex items-center justify-center">
-            <div
-              className={`flex items-center justify-between min-w-[400px] max-w-[500px] gap-y-10`}
-            >
-              {navItems.map((item, idx) => (
-                <Link
-                  onClick={() => {
-                    toggleNavClick();
-                  }}
-                  target={item.newTab ? "_blank" : ""}
-                  key={idx}
-                  href={item.link}
-                  className="text-[#C0C0C0] hover:text-white text-md active:text-white "
-                >
-                  {item.text}
-                </Link>
-              ))}
-             
+            <div className="flex items-center justify-center">
+              <div
+                className={`flex items-center justify-between min-w-[400px] max-w-[500px] gap-y-10`}
+              >
+                {navItems.map((item, idx) => (
+                  <Link
+                    onClick={() => {
+                      toggleNavClick();
+                    }}
+                    target={item.newTab ? "_blank" : ""}
+                    key={idx}
+                    href={item.link}
+                    className="text-[#C0C0C0] hover:text-white text-md active:text-white "
+                  >
+                    {item.text}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
             <div
               id="button-container"
               className="hidden md:flex items-center justify-end gap-2 transition-all opacity-0"

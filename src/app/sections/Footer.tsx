@@ -26,7 +26,6 @@ const socials = [
 
 const Footer = () => {
   const checkCursor = (e: React.MouseEvent, id: string) => {
-    console.log(e);
     const el = document.getElementById(id);
     const { x, y } = el?.getBoundingClientRect() as DOMRect;
     if (x && y) {
