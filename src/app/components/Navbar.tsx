@@ -13,7 +13,7 @@ const navItems = [
   },
   {
     text: "Docs",
-    link: "https://docs.madara.zone/",
+    link: "https://docs.madara.build/",
     newTab: true,
   },
   {
