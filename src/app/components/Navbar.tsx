@@ -24,6 +24,13 @@ const navItems = [
     text: "Socials",
     link: "#footer",
   },
+  {
+    text: "Sharingan",
+    link: "https://sharingan.madara.build/",
+    newTab: true,
+    className:
+      "text-[#FF7F79] hover:text-[#BF383C] transition-colors duration-300 ease-in-out",
+  },
 ];
 
 const Navbar = () => {
@@ -32,8 +39,8 @@ const Navbar = () => {
   const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>();
 
   React.useEffect(() => {
-    trackLinks("nav_link_clicked", "#nav a")
-    trackLinks("footer_link_clicked", "#footer a")
+    trackLinks("nav_link_clicked", "#nav a");
+    trackLinks("footer_link_clicked", "#footer a");
 
     const handleScroll = () => {
       const el = document.getElementById("button-container");
@@ -54,9 +61,9 @@ const Navbar = () => {
 
   const toggleNavClick = () => {
     trackEvent("toggle_nav_view", {
-      isOpen: isOpen
+      isOpen: isOpen,
     });
-    if(width < 768) {
+    if (width < 768) {
       setIsOpen((prevState) => {
         if (!prevState) {
           document.body.style.overflow = "hidden";
@@ -117,7 +124,7 @@ const Navbar = () => {
               {navItems.map((item, idx) => (
                 <Link
                   onClick={() => {
-                    if(width < 768) {
+                    if (width < 768) {
                       toggleNavClick();
                     }
                     if (item.link.includes("#testimonials"))
@@ -132,7 +139,10 @@ const Navbar = () => {
                       ? "javascript:void(0);"
                       : item.link
                   }
-                  className="text-[#C0C0C0] hover:text-white text-md active:text-white "
+                  className={
+                    item?.className ||
+                    "text-[#C0C0C0] hover:text-white text-md active:text-white"
+                  }
                 >
                   {item.text}
                 </Link>
@@ -171,7 +181,10 @@ const Navbar = () => {
                     target={item.newTab ? "_blank" : ""}
                     key={idx}
                     href={item.link}
-                    className="text-[#C0C0C0] hover:text-white text-md active:text-white "
+                    className={
+                      item?.className ||
+                      "text-[#C0C0C0] hover:text-white text-md active:text-white"
+                    }
                   >
                     {item.text}
                   </Link>
