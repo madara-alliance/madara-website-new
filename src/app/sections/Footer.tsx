@@ -15,7 +15,7 @@ const socials = [
   {
     icon: Github,
     text: "Github",
-    link: "https://github.com/keep-starknet-strange/madara",
+    link: "https://github.com/madara-alliance/madara",
   },
   {
     icon: Twitter,

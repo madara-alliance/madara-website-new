@@ -150,7 +150,7 @@ const Navbar = () => {
 
               <div className="flex items-center gap-x-4 mt-auto">
                 <Link
-                  href="https://github.com/keep-starknet-strange/madara"
+                  href="https://github.com/madara-alliance/madara"
                   target="_blank"
                 >
                   <button className="bg-[#BF383C] border-[1.5px] border-[#C77475] flex items-center px-5 py-2 rounded-[32px]">
@@ -158,7 +158,7 @@ const Navbar = () => {
                   </button>
                 </Link>
                 <Link
-                  href="https://github.com/keep-starknet-strange/madara/blob/main/docs/getting-started.md"
+                  href="https://github.com/madara-alliance/madara/blob/main/README.md"
                   target="_blank"
                   className="text-[#FF7074] font-semibold text-lg border border-[#C77475] rounded-[32px] px-5 py-2"
                 >
@@ -196,14 +196,14 @@ const Navbar = () => {
               className="hidden md:flex items-center justify-end gap-2 transition-all opacity-0"
             >
               <Link
-                href="https://github.com/keep-starknet-strange/madara/blob/main/docs/getting-started.md"
+                href="https://github.com/madara-alliance/madara/blob/main/README.md"
                 target="_blank"
                 className="text-[#FF7074] font-semibold text-lg px-5"
               >
                 Build now
               </Link>
               <Link
-                href="https://github.com/keep-starknet-strange/madara"
+                href="https://github.com/madara-alliance/madara"
                 target="_blank"
               >
                 <button className="bg-[#BF383C] border-[1.5px] border-[#C77475] flex items-center px-5 py-2 rounded-[32px]">
