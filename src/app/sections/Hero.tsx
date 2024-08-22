@@ -22,14 +22,14 @@ const Hero = () => {
           <div className="glow-circle absolute top-0 w-[100px] blur-[40px] md:w-[300px] md:blur-[60px] right-[-22%]" />
           <Link
             className="z-[1]"
-            href="https://github.com/keep-starknet-strange/madara/blob/main/docs/getting-started.md"
+            href="https://github.com/madara-alliance/madara/blob/main/README.md"
             target="_blank"
           >
             <Button>Build now</Button>
           </Link>
           <Link
             className="z-[1]"
-            href="https://github.com/keep-starknet-strange/madara"
+            href="https://github.com/madara-alliance/madara"
             target="_blank"
           >
             <button className="px-6 md:px-5 py-2 md:w-[150px] md:py-3 text-center text-base md:text-xl bg-white/[0.09] text-[#FEE3E3] border-2 md:border-4 border-[#f75c5c]/[0.34] rounded-xl md:rounded-xl">
